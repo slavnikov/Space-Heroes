@@ -9,6 +9,14 @@ function keyDownHandler(e) {
   } else if(e.keyCode == 32) { //SPACE
     new Missle(ship.x + ship.width / 2, ship.y);
   }
+
+  //test code for configuring vertical movement
+
+  // if(e.keyCode == 87) { //W
+  //   ship.moveVertically(-20);
+  // } else if(e.keyCode == 83) { //S
+  //   ship.moveVertically(20);
+  // }
 }
 
 function keyUpHandler(e) {
@@ -17,6 +25,14 @@ function keyUpHandler(e) {
   } else if(e.keyCode == 65 && ship.vx < 0) {
     ship.moveHorizantally(0);
   }
+
+  // test code for configuring vertical movement
+  
+  // if(e.keyCode == 87 && ship.vy < 0) {
+  //   ship.moveVertically(0);
+  // } else if(e.keyCode == 83 && ship.vy > 0) {
+  //   ship.moveVertically(0);
+  // }
 }
 
 

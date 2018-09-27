@@ -19,7 +19,7 @@ class Movable extends Drawable {
         this.x += this.vx;
       }
     if (this.x + this.width + this.vx >= this.xBounds.max) {
-      this.x = this.xBounds.max - this.width * 0.7;
+      this.x = this.xBounds.max - this.width;
     }
     if (this.x + this.vx <= this.xBounds.min) {
       this.x = this.xBounds.min;
@@ -34,6 +34,12 @@ class Movable extends Drawable {
       {
         this.y += this.vy;
       }
+    if (this.y + this.vy >= this.yBounds.max - this.height) {
+      this.y = this.yBounds.max - this.height;
+    }
+    if (this.y + this.vy <= this.yBounds.min) {
+      this.y = this.yBounds.min;
+    }
   }
 
   translate() {
@@ -45,9 +51,13 @@ class Movable extends Drawable {
     this.vx = speed;
   }
 
+  moveVertically(speed) {
+    this.vy = speed;
+  }
+
   draw(context) {
-    super.draw(context);
     this.translate();
+    super.draw(context);
   }
 }
 
