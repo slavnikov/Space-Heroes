@@ -1,5 +1,5 @@
-import Drawable from '../classes/drawable.js';
+import Movable from '../classes/movable.js';
 
-const ship = new Drawable(0, 0, 20, 20);
+const ship = new Movable(0, 0, 20, 20);
 
 export default ship;
