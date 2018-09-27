@@ -13,7 +13,6 @@ class Drawable {
     context.rect(this.x, this.y, this.width, this.height);
     context.stroke();
     context.closePath();
-    this.translate();
   }
 }
 

@@ -2,6 +2,7 @@ import ship from './objects/ship.js';
 import setupControlls from './controls_setup.js';
 
 setupControlls(document);
+export const objects = {player: ship};
 
 document.addEventListener("DOMContentLoaded", function (e) {
   const canvas = $("#field");
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   function renderGame() {
     context.clearRect(0, 0, canvas[0].width, canvas[0].height);
-    ship.draw(context);
+    Object.values(objects).forEach((object) => {object.draw(context);});
   }
 
   setInterval(renderGame, 20);
