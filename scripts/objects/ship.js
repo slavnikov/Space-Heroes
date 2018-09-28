@@ -1,18 +1,15 @@
-import Movable from '../classes/movable.js';
+import Killable from '../classes/killable.js';
 import Missle from '../classes/missle.js';
 
-class PlayerShip extends Movable {
+class PlayerShip extends Killable {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.killable = true;
-  }
-
-  hitBox() {
-    return [this.x, this.x + this.width, this.y + this.height, this.y];
+    this.hitpoints = 5;
+    this.ref = 'player';
   }
 
   fireMissle() {
-    new Missle(this.x + this.width / 2, this.y, -15);
+    new Missle(this.x + this.width / 2, this.y, -15, "Enemy");
   }
 }
 
