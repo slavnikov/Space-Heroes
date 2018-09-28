@@ -4,3 +4,14 @@ canvas {
   display: block;
   width: 1250px;
 }
+
+#play-button {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 400px;
+}
+
+.hidden {
+  display: none !important;
+}
