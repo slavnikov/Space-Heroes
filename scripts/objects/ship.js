@@ -1,5 +1,6 @@
 import Killable from '../classes/killable.js';
 import Missle from '../classes/missle.js';
+import { game } from '../game.js';
 
 class PlayerShip extends Killable {
   constructor(x, y, width, height, hp) {
@@ -9,6 +10,11 @@ class PlayerShip extends Killable {
 
   fireMissle() {
     new Missle(this.x + this.width / 2, this.y, -15, "Enemy");
+  }
+
+  die () {
+    super.die();
+    game.gameOver();
   }
 }
 

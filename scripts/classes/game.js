@@ -2,6 +2,7 @@ import { objects } from '../game.js';
 import Level1 from '../levels/level1.js';
 import setupControlls from '../controls_setup.js';
 
+
 class Game {
   constructor(window) {
     this.window = window;
@@ -26,7 +27,7 @@ class Game {
   }
 
   gameOver() {
-
+    this.window.$("#game-over").removeClass("hidden");
   }
 }
 

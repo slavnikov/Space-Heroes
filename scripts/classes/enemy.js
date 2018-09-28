@@ -1,5 +1,6 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
+import { game } from '../game.js';
 
 class Enemy extends Killable {
   constructor(x, y, width, height, xBounds) {
@@ -9,7 +10,12 @@ class Enemy extends Killable {
 
   getVx() {
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
-      this.yBounds.max = this.yBounds.max + 50;
+      if (this.yBounds.max < 680) {
+        this.yBounds.max = this.yBounds.max + 50;
+      } else {
+        this.yBounds.max = 720;
+        game.gameOver();
+      }
       this.vx *= -1;
     }
 
