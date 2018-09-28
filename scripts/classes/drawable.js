@@ -6,14 +6,23 @@ class Drawable {
     this.y = y;
     this.width = width;
     this.height = height;
+    this.image = null;
+  }
+
+  setImage(image){
+    this.image = image;
   }
 
   draw(context) {
-    context.beginPath();
-    context.fillStyle="green";
-    context.rect(this.x, this.y, this.width, this.height);
-    context.fill();
-    context.closePath();
+    if (this.image) {
+      context.drawImage(this.image, this.x, this.y, this.width, this.height);
+    } else {
+      context.beginPath();
+      context.fillStyle="white";
+      context.rect(this.x, this.y, this.width, this.height);
+      context.fill();
+      context.closePath();
+    }
   }
 
   delete() {

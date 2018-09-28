@@ -3,7 +3,7 @@ import { objects } from '../game.js';
 
 class Missle extends Movable {
   constructor(x, y, dy, foe) {
-    super(x, y, 4, 20, {min: 0, max: 1250}, {min: -50, max: 750}, 0, dy);
+    super(x, y, 10, 36, {min: 0, max: 1250}, {min: -50, max: 800}, 0, dy);
     this.ref = Math.random();
     objects[this.ref] = this;
     this.foe = foe;

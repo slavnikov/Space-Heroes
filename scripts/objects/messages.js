@@ -21,7 +21,7 @@ export const cleared = new Message(
 
 export const level1M = new Message(
   "30px Comic Sans MS",
-  "black",
+  "white",
   "center",
   "Level 1: The First Wave",
   1250 / 2,
@@ -31,7 +31,7 @@ export const level1M = new Message(
 
 export const level2M = new Message(
   "30px Comic Sans MS",
-  "black",
+  "white",
   "center",
   "Level 2: The Second Wave",
   1250 / 2,
@@ -41,7 +41,7 @@ export const level2M = new Message(
 
 export const pressP = new Message(
   "30px Comic Sans MS",
-  "black",
+  "white",
   "center",
   "Press P To Play",
   1250 / 2,

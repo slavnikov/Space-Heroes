@@ -23,7 +23,11 @@ class Enemy extends Killable {
   }
 
   fireMissle() {
-    new Missle(this.x + this.width / 2, this.y + this.height, 7, "PlayerShip");
+    const image = new Image();
+    image.src = 'assets/theme_1/ammo/grunt_missle.png';
+
+    const missle = new Missle(this.x + this.width / 2, this.y + this.height, 7, "PlayerShip");
+    missle.setImage(image);
   }
 
   translate() {

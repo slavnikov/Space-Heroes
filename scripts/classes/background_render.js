@@ -25,8 +25,9 @@ class BackgroundRender {
   generateParticle (pre_y) {
     const x = Math.random() * 1250;
     const y = pre_y || Math.random() * 720;
-    const vy = Math.random() * 0.16;
-    new BackgroundParticle(x, y, 2, 2, vy);
+    const vy = Math.random() * 0.22;
+    const particle = new BackgroundParticle(x, y, 2, 2, vy);
+    particle.setImage();
   }
 }
 

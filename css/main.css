@@ -3,6 +3,7 @@ canvas {
   margin: 0 auto;
   display: block;
   width: 1250px;
+  background: black;
 }
 
 #play-button {
