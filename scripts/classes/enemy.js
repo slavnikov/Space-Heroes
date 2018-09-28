@@ -3,7 +3,7 @@ import Missle from './missle.js';
 
 class Enemy extends Killable {
   constructor(x, y, width, height, xBounds) {
-    super(x, y, width, height, xBounds, {min: 0, max: 100}, 5, 2);
+    super(x, y, width, height, xBounds, {min: 0, max: 100}, 5, 2, 2);
     this.ref = Math.random();
   }
 

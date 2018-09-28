@@ -54,9 +54,14 @@ class Missle extends Movable {
     Object.keys(objects).forEach((key) => {
       const object = objects[key];
       if (object && object.constructor.name === this.foe && this.detectHit(object)) {
-        this.kill(key);
+        this.hit(object);
       }
     });
+  }
+
+  hit(object) {
+    object.getHit(1);
+    this.delete();
   }
 
   delete() {

@@ -2,9 +2,8 @@ import Killable from '../classes/killable.js';
 import Missle from '../classes/missle.js';
 
 class PlayerShip extends Killable {
-  constructor(x, y, width, height) {
-    super(x, y, width, height);
-    this.hitpoints = 5;
+  constructor(x, y, width, height, hp) {
+    super(x, y, width, height, null, null, null, null, hp);
     this.ref = 'player';
   }
 
@@ -13,5 +12,5 @@ class PlayerShip extends Killable {
   }
 }
 
-const ship = new PlayerShip(1250 / 2 - 50, 670, 100, 50);
+const ship = new PlayerShip(1250/2-50, 670, 100, 50, 5);
 export default ship;
