@@ -1,7 +1,7 @@
 import Message from '../classes/message.js';
 
 export const gameOver = new Message(
-  "30px Comic Sans MS",
+  "100px Righteous",
   "red",
   "center",
   "Game Over",
@@ -10,7 +10,7 @@ export const gameOver = new Message(
 );
 
 export const cleared = new Message(
-  "30px Comic Sans MS",
+  "75px Righteous",
   "green",
   "center",
   "LEVEL CLEARED!",
@@ -20,7 +20,7 @@ export const cleared = new Message(
 );
 
 export const level1M = new Message(
-  "30px Comic Sans MS",
+  "50px Righteous",
   "white",
   "center",
   "Level 1: The First Wave",
@@ -30,7 +30,7 @@ export const level1M = new Message(
 );
 
 export const level2M = new Message(
-  "30px Comic Sans MS",
+  "50px Righteous",
   "white",
   "center",
   "Level 2: The Second Wave",
@@ -40,7 +40,7 @@ export const level2M = new Message(
 );
 
 export const pressP = new Message(
-  "30px Comic Sans MS",
+  "75px Righteous",
   "white",
   "center",
   "Press P To Play",

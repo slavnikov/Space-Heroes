@@ -15,6 +15,5 @@ backgroundRender.initiateBackground();
 setupControlls(document);
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  debugger
   setInterval(game.playBackgournd, 20);
 });

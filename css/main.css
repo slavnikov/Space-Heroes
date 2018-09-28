@@ -1,9 +1,16 @@
+body {
+  background-color: black;
+  max-width: 1920px;
+  max-height: 1080px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 canvas {
-  border: 3px solid #282828;
   margin: 0 auto;
   display: block;
   width: 1250px;
-  background: black;
+  background: transparent;
 }
 
 #play-button {
@@ -23,3 +30,11 @@ canvas {
   margin: 0 auto;
   top: 300px;
 }
+
+img {
+  position: relative;
+    top: -406px;
+    z-index: -1;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Righteous);

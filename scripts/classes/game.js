@@ -40,6 +40,7 @@ class Game {
 
   renderScreen() {
     this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
+    backgroundRender.render(this.context);
 
     if (!this.haveResetLevel && !this.enemiesPresent()) {
       setTimeout(this.setupNextLevel.bind(this), 3e3);
@@ -52,7 +53,6 @@ class Game {
     });
 
     Object.values(messages).forEach((message) => message.draw(this.context));
-    backgroundRender.render(this.context);
   }
 
   play() {
