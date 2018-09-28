@@ -3,7 +3,7 @@ import Game from './classes/game.js';
 import setupControlls from './controls_setup.js';
 
 export const objects = {player: ship};
-export const messages = [];
+export const messages = {};
 export const game = new Game(window);
 
 setupControlls(document);
