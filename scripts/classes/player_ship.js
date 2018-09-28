@@ -1,6 +1,6 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
-import { game } from '../game.js';
+import { game, lifeBar } from '../game.js';
 
 class PlayerShip extends Killable {
   constructor(x, y, width, height, hp) {
@@ -8,6 +8,7 @@ class PlayerShip extends Killable {
     this.ref = 'player';
     this.toggleReload = this.toggleReload.bind(this);
     this.needsReload = false;
+    this.maxHp = hp;
   }
 
   fireMissle() {
@@ -22,7 +23,26 @@ class PlayerShip extends Killable {
     this.needsReload = !this.needsReload;
   }
 
+  drawLifeBar() {
+    const LBContext = lifeBar.getContext("2d");
+    const percentLifeLeft = this.hp / this.maxHp;
+    const lifeLeft = 500 * percentLifeLeft;
+
+    LBContext.clearRect(0, 0, lifeBar.width, lifeBar.height);
+    LBContext.beginPath();
+    LBContext.fillStyle= '#7A0000';
+    LBContext.rect(0, 0 + (500 - lifeLeft), 30, lifeLeft);
+    LBContext.fill();
+    LBContext.closePath();
+  }
+
+  draw(context) {
+    this.drawLifeBar();
+    super.draw(context);
+  }
+
   delete () {
+    this.drawLifeBar();
     super.delete();
     game.gameOver();
   }

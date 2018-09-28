@@ -7,6 +7,7 @@ import * as Messages from './objects/messages.js';
 export const objects = {player: ship};
 export const messages = {[Messages.pressP.ref]: Messages.pressP};
 export const background = {};
+export const lifeBar = $("#life-bar")[0];
 
 export const game = new Game(window);
 export const backgroundRender = new BackgroundRender();
@@ -15,5 +16,6 @@ backgroundRender.initiateBackground();
 setupControlls(document);
 
 document.addEventListener("DOMContentLoaded", function (e) {
+  // TODO: Delete the inteval created below once the game starts!
   setInterval(game.playBackgournd, 20);
 });

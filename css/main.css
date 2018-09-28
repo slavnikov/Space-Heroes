@@ -6,35 +6,33 @@ body {
   overflow-y: hidden;
 }
 
-canvas {
+#canvases {
+  display: flex;
+}
+
+#field {
   margin: 0 auto;
   display: block;
   width: 1250px;
   background: transparent;
 }
 
-#play-button {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  top: 400px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-#game-over {
-  position: relative;
-  width: 50px;
-  margin: 0 auto;
-  top: 300px;
-}
-
 img {
   position: relative;
     top: -406px;
     z-index: -1;
+}
+
+#life-bar {
+  border: 0px solid red;
+  position: absolute;
+  margin: 50px 0px 0px 50px;
+  box-shadow: 0 0 30px #FF0000;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Righteous);
