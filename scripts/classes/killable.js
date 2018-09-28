@@ -15,12 +15,8 @@ class Killable extends Movable {
   getHit(damage) {
     this.hp -= damage;
     if (this.hp <= 0) {
-      this.die();
+      this.delete();
     }
-  }
-
-  die() {
-    delete(objects[this.ref]);
   }
 }
 

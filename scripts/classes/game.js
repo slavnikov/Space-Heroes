@@ -1,4 +1,4 @@
-import { objects, messages } from '../game.js';
+import { objects, messages, backgroundRender } from '../game.js';
 import setupControlls from '../controls_setup.js';
 import ship from '../objects/ship.js';
 import level1 from '../levels/level1.js';
@@ -52,6 +52,7 @@ class Game {
     });
 
     Object.values(messages).forEach((message) => message.draw(this.context));
+    backgroundRender.render(this.context);
   }
 
   play() {
@@ -62,7 +63,9 @@ class Game {
 
   playBackgournd() {
     if (!this.currentInterval) {
+      this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
       Object.values(messages).forEach((message) => message.draw(this.context));
+      backgroundRender.render(this.context);
     }
   }
 

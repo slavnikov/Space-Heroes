@@ -12,8 +12,8 @@ class PlayerShip extends Killable {
     new Missle(this.x + this.width / 2, this.y, -15, "Enemy");
   }
 
-  die () {
-    super.die();
+  delete () {
+    super.delete();
     game.gameOver();
   }
 }

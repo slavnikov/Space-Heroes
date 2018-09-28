@@ -64,10 +64,6 @@ class Missle extends Movable {
     this.delete();
   }
 
-  delete() {
-    delete(objects[this.ref]);
-  }
-
   kill(key) {
     delete(objects[key]);
     this.delete();
