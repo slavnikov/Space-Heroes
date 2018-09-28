@@ -8,7 +8,10 @@ function keyDownHandler(e) {
   } else if(e.keyCode == 65) { //A
     ship.moveHorizantally(-20);
   } else if(e.keyCode == 32) { //SPACE
-    ship.fireMissle();
+    if (!ship.needsReload) {
+      ship.fireMissle();
+      ship.toggleReload();
+    }
   }
 
   if (e.keyCode == 80 && !game.currentInterval) { //P
@@ -30,6 +33,9 @@ function keyUpHandler(e) {
     ship.moveHorizantally(0);
   }
 
+  if (e.keyCode == 32) { //SPACE
+    ship.toggleReload();
+  }
   // test code for configuring vertical movement
 
   // if(e.keyCode == 87 && ship.vy < 0) {
