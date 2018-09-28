@@ -7,7 +7,7 @@ function keyDownHandler(e) {
   } else if(e.keyCode == 65) { //A
     ship.moveHorizantally(-20);
   } else if(e.keyCode == 32) { //SPACE
-    new Missle(ship.x + ship.width / 2, ship.y);
+    ship.fireMissle();
   }
 
   //test code for configuring vertical movement
@@ -27,7 +27,7 @@ function keyUpHandler(e) {
   }
 
   // test code for configuring vertical movement
-  
+
   // if(e.keyCode == 87 && ship.vy < 0) {
   //   ship.moveVertically(0);
   // } else if(e.keyCode == 83 && ship.vy > 0) {

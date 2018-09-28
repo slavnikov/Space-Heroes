@@ -1,4 +1,5 @@
 import Movable from './movable.js';
+import Missle from './missle.js';
 // import { objects } from '../game.js';
 
 class Enemy extends Movable {
@@ -45,7 +46,14 @@ class Enemy extends Movable {
     return this.vx;
   }
 
+  fireMissle() {
+    new Missle(this.x + this.width / 2, this.y + this.height, 7);
+  }
+
   translate() {
+    if (Math.random() < 0.007) {
+      this.fireMissle();
+    }
     this.getVx();
     super.translate();
   }
