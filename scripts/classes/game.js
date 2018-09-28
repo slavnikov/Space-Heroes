@@ -13,6 +13,7 @@ class Game {
     this.context = this.canvas[0].getContext("2d");
     this.renderScreen = this.renderScreen.bind(this);
     this.play = this.play.bind(this);
+    this.playBackgournd = this.playBackgournd.bind(this);
     this.currentInterval = null;
     this.levels = [level1, level2];
     this.nextLevelIdx = 0;
@@ -54,9 +55,15 @@ class Game {
   }
 
   play() {
+    delete(messages[Messages.pressP.ref]);
     this.setupNextLevel();
-    this.window.$("#play-button").addClass("hidden");
-    this.currentInterval = this.window.setInterval(this.renderScreen, 20);
+    this.currentInterval = setInterval(this.renderScreen, 20);
+  }
+
+  playBackgournd() {
+    if (!this.currentInterval) {
+      Object.values(messages).forEach((message) => message.draw(this.context));
+    }
   }
 
   gameOver() {

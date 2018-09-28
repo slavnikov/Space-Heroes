@@ -38,3 +38,12 @@ export const level2M = new Message(
   720 / 2,
   3e3
 );
+
+export const pressP = new Message(
+  "30px Comic Sans MS",
+  "black",
+  "center",
+  "Press P To Play",
+  1250 / 2,
+  720 / 2
+);

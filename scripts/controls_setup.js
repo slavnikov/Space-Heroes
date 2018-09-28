@@ -1,5 +1,6 @@
 import ship from './objects/ship.js';
 import Missle from './classes/missle.js';
+import {game} from './game.js';
 
 function keyDownHandler(e) {
   if(e.keyCode == 68) { //D
@@ -10,6 +11,9 @@ function keyDownHandler(e) {
     ship.fireMissle();
   }
 
+  if (e.keyCode == 80 && !game.currentInterval) { //P
+    game.play();
+  }
   //test code for configuring vertical movement
 
   // if(e.keyCode == 87) { //W
