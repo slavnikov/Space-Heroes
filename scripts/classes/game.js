@@ -1,7 +1,8 @@
-import { objects } from '../game.js';
-import Level1 from '../levels/level1.js';
+import { objects, messages } from '../game.js';
 import setupControlls from '../controls_setup.js';
-
+import ship from '../objects/ship.js';
+import level1 from '../levels/level1.js';
+import * as Messages from '../objects/messages.js';
 
 class Game {
   constructor(window) {
@@ -16,18 +17,22 @@ class Game {
 
   renderScreen() {
     this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
+
     Object.values(objects).forEach((object) => {
       object.draw(this.context);
     });
+
+    Object.values(messages).forEach((message) => message.draw(this.context));
   }
 
   play() {
+    level1.setup();
     this.window.$("#play-button").addClass("hidden");
     this.currentInterval = this.window.setInterval(this.renderScreen, 20);
   }
 
   gameOver() {
-    this.window.$("#game-over").removeClass("hidden");
+    messages[Messages.gameOver.ref] = Messages.gameOver;
   }
 }
 
