@@ -3,7 +3,7 @@ import { objects } from '../game.js';
 
 class Missle extends Movable {
   constructor(x, y) {
-    super(x, y, 20, 4, {min: 0, max: 1250}, {min: -50, max: 720}, 0, -15);
+    super(x, y, 4, 20, {min: 0, max: 1250}, {min: -50, max: 720}, 0, -15);
     this.ref = Math.random();
     objects[this.ref] = this;
   }
@@ -39,7 +39,7 @@ class Missle extends Movable {
   processTargets() {
     Object.keys(objects).forEach((key) => {
       const object = objects[key];
-      if (this.detectHit(object)) {
+      if (object && this.detectHit(object)) {
         this.kill(key);
       }
     });

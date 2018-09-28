@@ -1,18 +1,53 @@
 import Movable from './movable.js';
+// import { objects } from '../game.js';
 
 class Enemy extends Movable {
-  constructor() {
-    super(0, 0, 30, 60, null, null, 0, 0);
+  constructor(x, y, width, height, xBounds) {
+    super(x, y, width, height, xBounds, {min: 0, max: 100}, 5, 2);
     this.ref = Math.random();
     this.killable = true;
   }
 
-  translate() {
-    super.translate();
+  // flankingEnemy() {
+  //   return Object.values(objects).find((object) => {
+  //     if (object.constructor.name !== "Enemy") {
+  //       return false;
+  //     }
+  //     if (this.vx > 0) {
+  //       return object.x > this.x;
+  //     } else {
+  //       return object.x < this.x;
+  //     }
+  //   });
+  // }
+
+  getVx() {
+    // const flanker = this.flankingEnemy();
+    //
+    // if (this.vx < 0 && flanker && flanker.vx !== this.vx) {
+    //   if (flanker.yBounds.max !== this.yBounds.max) {
+    //     this.yBounds.max = flanker.yBounds.max;
+    //   }
+    //   this.vx = flanker.vx;
+    //   return this.vx;
+    // }
 
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
+      this.yBounds.max = this.yBounds.max + 50;
       this.vx *= -1;
     }
+
+    // if (flanker) {
+    //   this.vx = flanker.getVx();
+    //   this.yBounds.max = flanker.yBounds.max;
+    // }
+
+    return this.vx;
+  }
+
+  translate() {
+    this.getVx();
+    super.translate();
   }
 
   hitBox() {

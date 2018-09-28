@@ -1,8 +1,8 @@
 import Drawable from './drawable.js';
 
 class Movable extends Drawable {
-  constructor(x, y, height, width, xBounds, yBounds, vx, vy) {
-    super(x, y, height, width);
+  constructor(x, y, width, height, xBounds, yBounds, vx, vy) {
+    super(x, y, width, height);
     this.width = width;
     this.xBounds = xBounds || {min: 0, max: 1250};
     this.yBounds = yBounds || {min: 0, max: 720};
