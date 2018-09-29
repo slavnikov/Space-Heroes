@@ -9,6 +9,8 @@ class PlayerShip extends Killable {
     this.toggleReload = this.toggleReload.bind(this);
     this.needsReload = false;
     this.maxHp = hp;
+    this.LBContext = lifeBar.getContext("2d");
+    this.drawLifeBar();
   }
 
   fireMissle() {
@@ -24,25 +26,23 @@ class PlayerShip extends Killable {
   }
 
   drawLifeBar() {
-    const LBContext = lifeBar.getContext("2d");
     const percentLifeLeft = this.hp / this.maxHp;
     const lifeLeft = 500 * percentLifeLeft;
 
-    LBContext.clearRect(0, 0, lifeBar.width, lifeBar.height);
-    LBContext.beginPath();
-    LBContext.fillStyle= '#7A0000';
-    LBContext.rect(0, 0 + (500 - lifeLeft), 30, lifeLeft);
-    LBContext.fill();
-    LBContext.closePath();
+    this.LBContext.clearRect(0, 0, lifeBar.width, lifeBar.height);
+    this.LBContext.beginPath();
+    this.LBContext.fillStyle= '#7A0000';
+    this.LBContext.rect(0, 0 + (500 - lifeLeft), 30, lifeLeft);
+    this.LBContext.fill();
+    this.LBContext.closePath();
   }
 
-  draw(context) {
+  getHit(damage) {
+    super.getHit(damage);
     this.drawLifeBar();
-    super.draw(context);
   }
 
   delete () {
-    this.drawLifeBar();
     super.delete();
     game.gameOver();
   }
