@@ -1,4 +1,4 @@
-import {messages} from '../main.js';
+import {game} from '../main.js';
 
 class Message {
   constructor(font, color, alignment, text, x, y, delay) {
@@ -24,7 +24,7 @@ class Message {
   }
 
   erase() {
-    delete(messages[this.ref]);
+    delete(game.messages[this.ref]);
   }
 }
 

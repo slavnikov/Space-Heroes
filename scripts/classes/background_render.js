@@ -1,4 +1,4 @@
-import { background } from '../main.js';
+import { game } from '../main.js';
 import BackgroundParticle from './background_particle.js';
 
 class BackgroundRender {
@@ -6,10 +6,10 @@ class BackgroundRender {
   }
 
   render(context) {
-    if(Object.keys(background).length < 35) {
+    if(Object.keys(game.background).length < 35) {
       this.generateParticle(-1);
     }
-    Object.values(background).forEach((particle) => {
+    Object.values(game.background).forEach((particle) => {
       particle.draw(context);
     });
   }

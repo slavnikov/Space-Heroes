@@ -1,9 +1,9 @@
-import { messages, backgroundRender } from '../main.js';
+import { backgroundRender } from '../main.js';
 // import setupControlls from '../controls_setup.js';
 import createPlayerShip from '../objects/ship.js';
 import level1 from '../levels/level1.js';
 import level2 from '../levels/level2.js';
-import * as Messages from '../objects/messages.js';
+import * as msgObjects from '../objects/messages.js';
 
 class Game {
   constructor(window) {
@@ -13,6 +13,9 @@ class Game {
     this.context = this.canvas[0].getContext("2d");
 
     this.objects = {};
+    this.messages = {[msgObjects.pressP.ref]: msgObjects.pressP};
+    this.background = {};
+
 
     this.playBackgournd = this.playBackgournd.bind(this);
     this.renderScreen = this.renderScreen.bind(this);
@@ -51,7 +54,7 @@ class Game {
 
     if (!this.haveResetLevel && !this.enemiesPresent()) {
       setTimeout(this.setupNextLevel.bind(this), 3e3);
-      messages[Messages.cleared.ref] = Messages.cleared;
+      this.messages[msgObjects.cleared.ref] = msgObjects.cleared;
       this.haveResetLevel = true;
     }
 
@@ -59,13 +62,13 @@ class Game {
       object.draw(this.context);
     });
 
-    Object.values(messages).forEach((message) => message.draw(this.context));
+    Object.values(this.messages).forEach((message) => message.draw(this.context));
   }
 
   play() {
     this.ship = createPlayerShip();
     this.objects.player = this.ship;
-    delete(messages[Messages.pressP.ref]);
+    delete(this.messages[msgObjects.pressP.ref]);
     this.setupNextLevel();
     this.currentInterval = setInterval(this.renderScreen, 20);
   }
@@ -73,13 +76,13 @@ class Game {
   playBackgournd() {
     if (!this.currentInterval) {
       this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
-      Object.values(messages).forEach((message) => message.draw(this.context));
+      Object.values(this.messages).forEach((message) => message.draw(this.context));
       backgroundRender.render(this.context);
     }
   }
 
   gameOver() {
-    messages[Messages.gameOver.ref] = Messages.gameOver;
+    this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
   }
 }
 

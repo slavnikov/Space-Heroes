@@ -1,11 +1,11 @@
 import Movable from './movable.js';
-import { background } from '../main.js';
+import { game } from '../main.js';
 
 class BackgroundParticle extends Movable {
   constructor(x, y, width, height, vy) {
     super(x, y, width, height, null, {min: -20, max: 740}, 0, vy);
     this.ref = Math.random();
-    background[this.ref] = this;
+    game.background[this.ref] = this;
   }
 
   translate() {
@@ -16,7 +16,7 @@ class BackgroundParticle extends Movable {
   }
 
   delete() {
-    delete(background[this.ref]);
+    delete(game.background[this.ref]);
   }
 }
 

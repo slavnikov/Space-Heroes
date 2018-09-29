@@ -1,4 +1,4 @@
-import { game, messages } from '../main.js';
+import { game } from '../main.js';
 
 class Level {
   constructor(enemies, message) {
@@ -7,7 +7,7 @@ class Level {
   }
 
   setup() {
-    messages[this.message.ref] = this.message;
+    game.messages[this.message.ref] = this.message;
 
     this.enemies.forEach((enemy) => {
       game.objects[enemy.ref] = enemy;
