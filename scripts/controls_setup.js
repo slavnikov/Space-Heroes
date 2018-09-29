@@ -13,9 +13,13 @@ function keyDownHandler(e) {
     }
   }
 
-  if (e.keyCode == 80 && !game.currentInterval) { //P
-    game.play();
-    clearInterval(backgroundInterval);
+  if (e.keyCode == 80) { //P
+    if (!game.currentInterval) {
+      game.play();
+      clearInterval(backgroundInterval);
+    } else {
+      game.togglePause();
+    }
   }
 
   if (e.keyCode == 82) { //R

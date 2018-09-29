@@ -21,6 +21,7 @@ class Game {
     this.play = this.play.bind(this);
 
     this.currentInterval = null;
+    this.paused = false;
 
     this.levels = [level1, level2];
     this.nextLevelIdx = 0;
@@ -48,6 +49,10 @@ class Game {
   }
 
   renderScreen() {
+    if (this.paused) {
+      return;
+    }
+
     this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
     backgroundRender.render(this.context);
 
@@ -60,7 +65,6 @@ class Game {
     Object.values(this.objects).forEach((object) => {
       object.draw(this.context);
     });
-
     Object.values(this.messages).forEach((message) => message.draw(this.context));
   }
 
@@ -73,11 +77,13 @@ class Game {
   }
 
   playBackgournd() {
-    if (!this.currentInterval) {
-      this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
-      Object.values(this.messages).forEach((message) => message.draw(this.context));
-      backgroundRender.render(this.context);
-    }
+    this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
+    Object.values(this.messages).forEach((message) => message.draw(this.context));
+    backgroundRender.render(this.context);
+  }
+
+  togglePause() {
+    this.paused = !this.paused;
   }
 
   gameOver() {
