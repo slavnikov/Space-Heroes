@@ -1,6 +1,5 @@
 import Level from '../classes/level.js';
 import Enemy from '../classes/enemy.js';
-import { objects } from '../main.js';
 import { level1M } from '../objects/messages.js';
 
 const enemies = [];

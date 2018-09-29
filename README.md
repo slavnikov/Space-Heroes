@@ -1,8 +1,8 @@
 # SPACE INVADERS!
 
 ### TODO List
-+ rename game file to be something else
 + refactor objects, messages, and else to be inside the game class
++ delete the background interval on game start
 + restart button
 + pause button
 + move enemies higher up

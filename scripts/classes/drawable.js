@@ -1,4 +1,4 @@
-import {objects} from '../main.js';
+import { game } from '../main.js';
 
 class Drawable {
   constructor(x, y, width, height) {
@@ -26,7 +26,7 @@ class Drawable {
   }
 
   delete() {
-    delete(objects[this.ref]);
+    delete(game.objects[this.ref]);
   }
 }
 

@@ -1,6 +1,6 @@
-import { objects, messages, backgroundRender } from '../main.js';
-import setupControlls from '../controls_setup.js';
-import ship from '../objects/ship.js';
+import { messages, backgroundRender } from '../main.js';
+// import setupControlls from '../controls_setup.js';
+import createPlayerShip from '../objects/ship.js';
 import level1 from '../levels/level1.js';
 import level2 from '../levels/level2.js';
 import * as Messages from '../objects/messages.js';
@@ -11,17 +11,24 @@ class Game {
     this.documnet = window.document;
     this.canvas = window.$("#field");
     this.context = this.canvas[0].getContext("2d");
+
+    this.objects = {};
+
+    this.playBackgournd = this.playBackgournd.bind(this);
     this.renderScreen = this.renderScreen.bind(this);
     this.play = this.play.bind(this);
-    this.playBackgournd = this.playBackgournd.bind(this);
+
     this.currentInterval = null;
+
     this.levels = [level1, level2];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
+
+    this.ship = null;
   }
 
   enemiesPresent () {
-    return Object.values(objects).some((object) => {
+    return Object.values(this.objects).some((object) => {
       return object.constructor.name === "Enemy";
     });
   }
@@ -48,7 +55,7 @@ class Game {
       this.haveResetLevel = true;
     }
 
-    Object.values(objects).forEach((object) => {
+    Object.values(this.objects).forEach((object) => {
       object.draw(this.context);
     });
 
@@ -56,6 +63,8 @@ class Game {
   }
 
   play() {
+    this.ship = createPlayerShip();
+    this.objects.player = this.ship;
     delete(messages[Messages.pressP.ref]);
     this.setupNextLevel();
     this.currentInterval = setInterval(this.renderScreen, 20);

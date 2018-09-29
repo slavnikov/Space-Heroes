@@ -1,11 +1,11 @@
 import Movable from './movable.js';
-import { objects } from '../main.js';
+import { game } from '../main.js';
 
 class Missle extends Movable {
   constructor(x, y, dy, foe) {
     super(x, y, 10, 36, {min: 0, max: 1250}, {min: -50, max: 800}, 0, dy);
     this.ref = Math.random();
-    objects[this.ref] = this;
+    game.objects[this.ref] = this;
     this.foe = foe;
   }
 
@@ -51,8 +51,8 @@ class Missle extends Movable {
   }
 
   processTargets() {
-    Object.keys(objects).forEach((key) => {
-      const object = objects[key];
+    Object.keys(game.objects).forEach((key) => {
+      const object = game.objects[key];
       if (object && object.constructor.name === this.foe && this.detectHit(object)) {
         this.hit(object);
       }
@@ -65,7 +65,7 @@ class Missle extends Movable {
   }
 
   kill(key) {
-    delete(objects[key]);
+    delete(game.objects[key]);
     this.delete();
   }
 }
