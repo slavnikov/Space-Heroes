@@ -44,3 +44,12 @@ export const pressP = new Message(
   1250 / 2,
   720 / 2
 );
+
+export const pressR = new Message(
+  "75px Righteous",
+  "white",
+  "center",
+  "Press R To Play Again",
+  1250 / 2,
+  720 / 2 + 100
+);

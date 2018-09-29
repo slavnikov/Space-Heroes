@@ -81,7 +81,9 @@ class Game {
   }
 
   gameOver() {
+    this.messages = {};
     this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
+    this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
   }
 
   restart() {
