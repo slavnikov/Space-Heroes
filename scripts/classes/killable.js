@@ -1,5 +1,5 @@
 import Movable from './movable.js';
-import { objects } from '../game.js';
+import { objects } from '../main.js';
 
 class Killable extends Movable {
   constructor(x, y, width, height, xBounds, yBounds, vx, vy, hp) {

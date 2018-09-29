@@ -1,4 +1,4 @@
-import { background } from '../game.js';
+import { background } from '../main.js';
 import BackgroundParticle from './background_particle.js';
 
 class BackgroundRender {

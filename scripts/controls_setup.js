@@ -1,6 +1,6 @@
 import ship from './objects/ship.js';
 import Missle from './classes/missle.js';
-import {game} from './game.js';
+import {game} from './main.js';
 
 function keyDownHandler(e) {
   if(e.keyCode == 68) { //D

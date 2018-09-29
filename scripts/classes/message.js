@@ -1,4 +1,4 @@
-import {messages} from '../game.js';
+import {messages} from '../main.js';
 
 class Message {
   constructor(font, color, alignment, text, x, y, delay) {

@@ -1,4 +1,4 @@
-import { objects, messages, backgroundRender } from '../game.js';
+import { objects, messages, backgroundRender } from '../main.js';
 import setupControlls from '../controls_setup.js';
 import ship from '../objects/ship.js';
 import level1 from '../levels/level1.js';

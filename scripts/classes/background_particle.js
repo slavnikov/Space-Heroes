@@ -1,5 +1,5 @@
 import Movable from './movable.js';
-import { background } from '../game.js';
+import { background } from '../main.js';
 
 class BackgroundParticle extends Movable {
   constructor(x, y, width, height, vy) {

@@ -1,6 +1,6 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
-import { game, lifeBar } from '../game.js';
+import { game, lifeBar } from '../main.js';
 
 class PlayerShip extends Killable {
   constructor(x, y, width, height, hp) {

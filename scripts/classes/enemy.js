@@ -1,6 +1,6 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
-import { game } from '../game.js';
+import { game } from '../main.js';
 
 class Enemy extends Killable {
   constructor(x, y, width, height, xBounds) {

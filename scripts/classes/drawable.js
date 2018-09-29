@@ -1,4 +1,4 @@
-import {objects} from '../game.js';
+import {objects} from '../main.js';
 
 class Drawable {
   constructor(x, y, width, height) {
