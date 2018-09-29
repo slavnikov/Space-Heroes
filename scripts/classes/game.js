@@ -1,5 +1,4 @@
 import { backgroundRender } from '../main.js';
-// import setupControlls from '../controls_setup.js';
 import createPlayerShip from '../objects/ship.js';
 import level1 from '../levels/level1.js';
 import level2 from '../levels/level2.js';
@@ -41,7 +40,7 @@ class Game {
     const nextLevel = this.levels[this.nextLevelIdx];
 
     if (nextLevel) {
-      nextLevel.setup();
+      nextLevel().setup();
       this.nextLevelIdx++;
     }
 
@@ -54,7 +53,7 @@ class Game {
 
     if (!this.haveResetLevel && !this.enemiesPresent()) {
       setTimeout(this.setupNextLevel.bind(this), 3e3);
-      this.messages[msgObjects.cleared.ref] = msgObjects.cleared;
+      this.messages[msgObjects.cleared.ref] = msgObjects.cleared.setDelay(2e3);
       this.haveResetLevel = true;
     }
 
@@ -83,6 +82,14 @@ class Game {
 
   gameOver() {
     this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
+  }
+
+  restart() {
+    clearInterval(this.currentInterval);
+    this.objects = {};
+    this.messages ={};
+    this.nextLevelIdx = 0;
+    this.play();
   }
 }
 

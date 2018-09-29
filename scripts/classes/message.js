@@ -1,7 +1,7 @@
 import {game} from '../main.js';
 
 class Message {
-  constructor(font, color, alignment, text, x, y, delay) {
+  constructor(font, color, alignment, text, x, y) {
     this.font = font;
     this.color = color;
     this.alignment = alignment;
@@ -9,7 +9,7 @@ class Message {
     this.x = x;
     this.y = y;
     this.ref = Math.random();
-    this.delay = delay;
+    this.delay = null;
   }
 
   draw(context) {
@@ -21,6 +21,11 @@ class Message {
       setTimeout(this.erase.bind(this), this.delay);
       this.delay = null;
     }
+  }
+
+  setDelay(delay) {
+    this.delay = delay;
+    return this;
   }
 
   erase() {

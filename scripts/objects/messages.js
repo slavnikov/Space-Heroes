@@ -15,8 +15,7 @@ export const cleared = new Message(
   "center",
   "LEVEL CLEARED!",
   1250 / 2,
-  720 / 2,
-  2e3
+  720 / 2
 );
 
 export const level1M = new Message(
@@ -25,8 +24,7 @@ export const level1M = new Message(
   "center",
   "Level 1: The First Wave",
   1250 / 2,
-  720 / 2,
-  3e3
+  720 / 2
 );
 
 export const level2M = new Message(
@@ -35,8 +33,7 @@ export const level2M = new Message(
   "center",
   "Level 2: The Second Wave",
   1250 / 2,
-  720 / 2,
-  3e3
+  720 / 2
 );
 
 export const pressP = new Message(

@@ -1,6 +1,5 @@
-// import ship from './objects/ship.js';
 import Missle from './classes/missle.js';
-import {game} from './main.js';
+import { game, backgroundInterval } from './main.js';
 
 function keyDownHandler(e) {
   if(e.keyCode == 68) { //D
@@ -16,7 +15,14 @@ function keyDownHandler(e) {
 
   if (e.keyCode == 80 && !game.currentInterval) { //P
     game.play();
+    clearInterval(backgroundInterval);
   }
+
+  if (e.keyCode == 82) { //R
+    game.restart();
+  }
+
+
   //test code for configuring vertical movement
 
   // if(e.keyCode == 87) { //W
