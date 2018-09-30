@@ -9,7 +9,7 @@ class ClassicGrunt extends Enemy {
 
   getVx() {
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
-      if (this.yBounds.max < 680 && this.y > 0) {
+      if (this.yBounds.max < 680) {
         this.yBounds.max = this.yBounds.max + 25;
       } else if(this.yBounds.max >= 680 && this.y >= 700 - this.height) {
         this.yBounds.max = 720;

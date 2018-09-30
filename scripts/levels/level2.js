@@ -7,23 +7,26 @@ function level2() {
   const image = new Image();
   image.src = "assets/theme_1/enemies/grunt.png";
 
-  for (var i = 0; i < 10; i++) {
-    const x = i * 100 + 50;
-    // const enemy = new FluidGrunt(x, -125, 80, 87);
-    const enemy = new FluidGrunt({
-      x: x,
-      y: -125,
-      width: 80,
-      height: 87,
-      xBounds: null,
-      yBounds: {min: -2000, max: 100},
-      vx: 3,
-      vy: 1,
-      hp: 3,
-    });
-    enemy.setImage(image);
+  for (var j = 1; j < 4; j++) {
+    for (var i = 0; i < 10; i++) {
+      const x = i * 100 + 50;
+      const y = j * -125;
+      const yMax = 115 - (j-1) * 115;
+      const enemy = new FluidGrunt({
+        x: x,
+        y: y,
+        width: 80,
+        height: 87,
+        xBounds: null,
+        yBounds: {min: -2000, max: yMax},
+        vx: 3 * Math.pow(-1, y),
+        vy: 1,
+        hp: 3,
+      });
+      enemy.setImage(image);
 
-    enemies.push(enemy);
+      enemies.push(enemy);
+    }
   }
 
   return new Level(enemies, level2M.setDelay(3e3));

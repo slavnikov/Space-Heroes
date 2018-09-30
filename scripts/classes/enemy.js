@@ -10,7 +10,7 @@ class Enemy extends Killable {
   }
 
   fireMissle(chance) {
-    if (this.y >= 0 && Math.random() < chance) {
+    if (this.y + this.height >= 0 && Math.random() < chance) {
       const image = new Image();
       image.src = 'assets/theme_1/ammo/grunt_missle.png';
 
