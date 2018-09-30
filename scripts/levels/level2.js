@@ -9,7 +9,7 @@ function level2() {
 
   for (var i = 0; i < 10; i++) {
     const x = i * 100 + 50;
-    const enemy = new Enemy(x, 0, 80, 87);
+    const enemy = new Enemy(x, -125, 80, 87);
     enemy.setImage(image);
 
     enemies.push(enemy);

@@ -26,6 +26,10 @@ function keyDownHandler(e) {
     game.restart();
   }
 
+  if (e.keyCode == 67 && !game.currentInterval) { //C
+    game.showControls();
+  }
+
 
   //test code for configuring vertical movement
 

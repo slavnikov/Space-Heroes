@@ -4,7 +4,7 @@ import { game } from '../main.js';
 
 class Enemy extends Killable {
   constructor(x, y, width, height, xBounds) {
-    super(x, y, width, height, xBounds, {min: 0, max: 100}, 5, 2, 2);
+    super(x, y, width, height, xBounds, {min: -500, max: 100}, 3, 0.7, 1);
     this.ref = Math.random();
   }
 
@@ -31,7 +31,7 @@ class Enemy extends Killable {
   }
 
   translate() {
-    if (Math.random() < 0.007) {
+    if (this.y >= 0 && Math.random() < 0.007) {
       this.fireMissle();
     }
     this.getVx();

@@ -18,6 +18,15 @@ export const cleared = new Message(
   720 / 2
 );
 
+export const earthSafe = new Message(
+  "75px Righteous",
+  "blue",
+  "center",
+  "The Earth is safe! for now...",
+  1250 / 2,
+  720 / 2
+);
+
 export const level1M = new Message(
   "50px Righteous",
   "white",
@@ -52,4 +61,49 @@ export const pressR = new Message(
   "Press R To Play Again",
   1250 / 2,
   720 / 2 + 100
+);
+
+export const pressC = new Message(
+  "50px Righteous",
+  "white",
+  "center",
+  "Press C to view the controls",
+  1250 / 2,
+  720 / 2 + 100
+);
+
+export const controls0 = new Message(
+  "30px Righteous",
+  "white",
+  "center",
+  "Use the A and D keys to steer your ship",
+  1250 / 2,
+  720 / 2 -85
+);
+
+export const controls1 = new Message(
+  "30px Righteous",
+  "white",
+  "center",
+  "Use the Space bar to fire a missle",
+  1250 / 2,
+  720 / 2
+);
+
+export const controls2 = new Message(
+  "30px Righteous",
+  "white",
+  "center",
+  "Ingame, use P to pause and unpause or R to restart",
+  1250 / 2,
+  720 / 2 + 85
+);
+
+export const controls3 = new Message(
+  "25px Righteous",
+  "white",
+  "center",
+  "Press C to close this screen",
+  1250 / 2,
+  720 / 2 + 200
 );
