@@ -53,7 +53,9 @@ class Missle extends Movable {
   processTargets() {
     Object.keys(game.objects).forEach((key) => {
       const object = game.objects[key];
-      if (object && object.constructor.name === this.foe && this.detectHit(object)) {
+      if (object &&
+        (object.constructor.name === this.foe || object.constructor.__proto__.name === this.foe) && 
+        this.detectHit(object)) {
         this.hit(object);
       }
     });

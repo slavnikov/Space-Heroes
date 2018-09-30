@@ -35,7 +35,7 @@ class Game {
 
   enemiesPresent () {
     return Object.values(this.objects).some((object) => {
-      return object.constructor.name === "Enemy";
+      return object.constructor.__proto__.name === "Enemy";
     });
   }
 
