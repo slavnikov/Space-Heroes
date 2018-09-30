@@ -1,13 +1,14 @@
 import Drawable from './drawable.js';
 
 class Movable extends Drawable {
-  constructor(x, y, width, height, xBounds, yBounds, vx, vy) {
-    super(x, y, width, height);
-    this.width = width;
-    this.xBounds = xBounds || {min: 0, max: 1250};
-    this.yBounds = yBounds || {min: 0, max: 720};
-    this.vx = vx || 0;
-    this.vy = vy || 0;
+  // constructor(x, y, width, height, xBounds, yBounds, vx, vy) {
+  constructor(props) {
+    super(props);
+    // this.width = width;
+    this.xBounds = props.xBounds || {min: 0, max: 1250};
+    this.yBounds = props.yBounds || {min: 0, max: 720};
+    this.vx = props.vx || 0;
+    this.vy = props.vy || 0;
   }
 
   translateH() {

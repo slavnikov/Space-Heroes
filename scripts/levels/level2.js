@@ -9,7 +9,18 @@ function level2() {
 
   for (var i = 0; i < 10; i++) {
     const x = i * 100 + 50;
-    const enemy = new FluidGrunt(x, -125, 80, 87);
+    // const enemy = new FluidGrunt(x, -125, 80, 87);
+    const enemy = new FluidGrunt({
+      x: x,
+      y: -125,
+      width: 80,
+      height: 87,
+      xBounds: null,
+      yBounds: {min: -2000, max: 100},
+      vx: 3,
+      vy: 1,
+      hp: 3,
+    });
     enemy.setImage(image);
 
     enemies.push(enemy);

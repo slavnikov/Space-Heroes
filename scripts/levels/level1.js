@@ -10,7 +10,17 @@ function level1() {
   for (var i = 0; i < 10; i++) {
     const x = i * 100 + 50;
     const xBounds = {min: x, max: x + 187};
-    const enemy = new ClassicGrunt(x, -125, 80, 87, xBounds);
+    const enemy = new ClassicGrunt({
+      x: x,
+      y: -125,
+      width: 80,
+      height: 87,
+      xBounds: xBounds,
+      yBounds: {min: -2000, max: 100},
+      vx: 2,
+      vy: 0.7,
+      hp: 3,
+    });
     enemy.setImage(image);
 
     enemies.push(enemy);

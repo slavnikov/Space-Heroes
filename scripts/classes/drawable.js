@@ -1,12 +1,12 @@
 import { game } from '../main.js';
 
 class Drawable {
-  constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.image = null;
+  constructor(props) {
+    this.x = props.x;
+    this.y = props.y;
+    this.width = props.width;
+    this.height = props.height;
+    this.image = props.image;
   }
 
   setImage(image){

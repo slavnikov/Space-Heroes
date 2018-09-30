@@ -3,8 +3,8 @@ import { game } from '../main.js';
 
 
 class ClassicGrunt extends Enemy {
-  constructor(x, y, width, height, xBounds) {
-    super(x, y, width, height, xBounds);
+  constructor(props) {
+    super(props);
   }
 
   getVx() {

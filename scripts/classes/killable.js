@@ -1,10 +1,10 @@
 import Movable from './movable.js';
 
 class Killable extends Movable {
-  constructor(x, y, width, height, xBounds, yBounds, vx, vy, hp) {
-    super(x, y, width, height, xBounds, yBounds, vx, vy);
+  constructor(props) {
+    super(props);
+    this.hp = props.hp;
     this.killable = true;
-    this.hp = hp;
   }
 
   hitBox() {

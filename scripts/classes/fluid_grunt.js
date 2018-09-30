@@ -2,8 +2,8 @@ import Enemy from './enemy.js';
 import { game } from '../main.js';
 
 class FluidGrunt extends Enemy {
-  constructor(x, y, width, height, xBounds) {
-    super(x, y, width, height, xBounds);
+  constructor(props) {
+    super(props);
   }
 
   getVx() {

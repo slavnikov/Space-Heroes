@@ -26,8 +26,18 @@ class BackgroundRender {
     const x = Math.random() * 1250;
     const y = pre_y || Math.random() * 720;
     const vy = Math.random() * 0.22;
-    const particle = new BackgroundParticle(x, y, 2, 2, vy);
-    particle.setImage();
+    const inherit = null;
+
+    new BackgroundParticle({
+      x: x,
+      y: y,
+      width: 2,
+      height: 2,
+      xBounds: inherit,
+      yBounds: {min: -20, max: 740},
+      vx: 0,
+      vy: vy
+    });
   }
 }
 

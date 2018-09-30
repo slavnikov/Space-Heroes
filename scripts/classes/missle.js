@@ -2,11 +2,13 @@ import Movable from './movable.js';
 import { game } from '../main.js';
 
 class Missle extends Movable {
-  constructor(x, y, dy, foe) {
-    super(x, y, 10, 36, {min: 0, max: 1250}, {min: -50, max: 800}, 0, dy);
+  constructor(props) {
+    super(props);
+    this.foe = props.foe;
+    this.damage = props.damage || 1;
     this.ref = Math.random();
+
     game.objects[this.ref] = this;
-    this.foe = foe;
   }
 
   translate() {
@@ -24,6 +26,7 @@ class Missle extends Movable {
   detectHit(object) {
     if (object.killable) {
       const hitBox = object.hitBox();
+
       if (this.vy < 0) {
         if (
           this.x + this.width / 2 >= hitBox[0] &&
@@ -53,16 +56,18 @@ class Missle extends Movable {
   processTargets() {
     Object.keys(game.objects).forEach((key) => {
       const object = game.objects[key];
-      if (object &&
-        (object.constructor.name === this.foe || object.constructor.__proto__.name === this.foe) && 
-        this.detectHit(object)) {
+      if (
+        object &&
+        (object.constructor.name === this.foe || object.constructor.__proto__.name === this.foe) &&
+        this.detectHit(object)
+      ) {
         this.hit(object);
       }
     });
   }
 
   hit(object) {
-    object.getHit(1);
+    object.getHit(this.damage);
     this.delete();
   }
 

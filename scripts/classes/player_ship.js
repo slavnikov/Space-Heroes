@@ -3,13 +3,14 @@ import Missle from './missle.js';
 import { game, lifeBar } from '../main.js';
 
 class PlayerShip extends Killable {
-  constructor(x, y, width, height, hp) {
-    super(x, y, width, height, null, null, null, null, hp);
+  constructor(props) {
+    super(props);
     this.ref = 'player';
     this.toggleReload = this.toggleReload.bind(this);
     this.needsReload = false;
-    this.maxHp = hp;
     this.LBContext = lifeBar.getContext("2d");
+    this.maxHp = props.hp;
+
     this.drawLifeBar();
   }
 
@@ -17,7 +18,18 @@ class PlayerShip extends Killable {
     const image = new Image();
     image.src = 'assets/theme_1/ammo/ship_missle.png';
 
-    const missle = new Missle(this.x + this.width / 2, this.y, -15, "Enemy");
+    const missle = new Missle({
+      x: this.x + this.width / 2,
+      y: this.y,
+      width: 10,
+      height: 36,
+      xBounds: null,
+      yBounds: {min: -50, max: 800},
+      vx: 0,
+      vy: -8,
+      foe: "Enemy",
+      damage: 10
+    });
     missle.setImage(image);
   }
 
