@@ -1,5 +1,6 @@
 import Movable from './movable.js';
 import Explosion from './explosion.js';
+import Fragment from './fragment_particle.js';
 
 class Killable extends Movable {
   constructor(props) {
@@ -21,6 +22,10 @@ class Killable extends Movable {
 
   delete() {
     new Explosion(this);
+    for (var i = 0; i < 10; i++) {
+      new Fragment(this);
+    }
+
     super.delete();
   }
 }

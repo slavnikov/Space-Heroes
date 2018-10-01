@@ -133,7 +133,7 @@ class Game {
     delete(this.objects[object.ref]);
   }
 
-  drwaObject(object) {
+  drawObject(object) {
     this.objects[object.ref] = object;
   }
 }

@@ -13,7 +13,7 @@ class Explosion extends Drawable {
     this.frameIdx = 0;
     this.ref = Math.random();
 
-    game.drwaObject(this);
+    game.drawObject(this);
   }
 
   moveFrame() {

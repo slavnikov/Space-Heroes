@@ -8,7 +8,7 @@ function level3() {
   const image = new Image();
   image.src = "assets/theme_1/enemies/grunt.png";
   const fluid_image = new Image();
-  image.src = "assets/theme_1/enemies/fluid_grunt.png";
+  fluid_image.src = "assets/theme_1/enemies/fluid_grunt.png";
 
   for (let j = 1; j < 4; j++) {
     for (let i = 0; i < 10; i++) {
@@ -36,8 +36,8 @@ function level3() {
   for (let j = 1; j < 4; j++) {
     for (let i = 0; i < 10; i++) {
       const x = i * 100 + 50;
-      const y = j * -125 - 450;
-      const yMax = 115 - (j-1) * 115 - 250;
+      const y = j * -125 - 300;
+      const yMax = 115 - (j-1) * 115 - 200;
       const enemy = new FluidGrunt({
         x: x,
         y: y,
