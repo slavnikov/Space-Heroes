@@ -1,4 +1,16 @@
 import Message from '../classes/message.js';
+import { game } from '../main.js';
+
+export const scoreMessage = (score) => {
+  return new Message (
+    "30px Righteous",
+    "blue",
+    "center",
+    `${score}`,
+    150 / 2,
+    48
+  );
+};
 
 export const gameOver = new Message(
   "100px Righteous",
@@ -11,7 +23,7 @@ export const gameOver = new Message(
 
 export const cleared = new Message(
   "75px Righteous",
-  "green",
+  "blue",
   "center",
   "LEVEL CLEARED!",
   1250 / 2,
@@ -94,7 +106,7 @@ export const controls1 = new Message(
   "30px Righteous",
   "white",
   "center",
-  "Use the Space bar to fire a missle",
+  "Use the Space bar to fire a missile",
   1250 / 2,
   720 / 2
 );

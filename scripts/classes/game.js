@@ -10,7 +10,9 @@ class Game {
     this.window = window;
     this.documnet = window.document;
     this.canvas = window.$("#field");
+    this.scoreCanvas = window.$("#score");
     this.context = this.canvas[0].getContext("2d");
+    this.scoreContext = this.scoreCanvas[0].getContext("2d");
 
     this.objects = {};
     this.messages = {
@@ -32,6 +34,8 @@ class Game {
     this.haveResetLevel = false;
 
     this.ship = null;
+
+    this.score = 0;
   }
 
   enemiesPresent () {
@@ -70,10 +74,11 @@ class Game {
       this.haveResetLevel = true;
     }
 
+    this.writeMessages();
+
     Object.values(this.objects).forEach((object) => {
       object.draw(this.context);
     });
-    this.writeMessages();
   }
 
   writeMessages() {
@@ -84,6 +89,7 @@ class Game {
     this.ship = createPlayerShip();
     this.objects.player = this.ship;
     this.messages = {};
+    this.changeScore(0);
     this.setupNextLevel();
     this.currentInterval = setInterval(this.renderScreen, 20);
   }
@@ -135,6 +141,12 @@ class Game {
 
   drawObject(object) {
     this.objects[object.ref] = object;
+  }
+
+  changeScore(delta) {
+    this.score += delta;
+    this.scoreContext.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
+    msgObjects.scoreMessage(this.score).draw(this.scoreContext);
   }
 }
 

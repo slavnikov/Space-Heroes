@@ -5,7 +5,6 @@ import { laserFire, rocketHit } from '../objects/sounds.js';
 
 class Enemy extends Killable {
   constructor(props) {
-    // super(x, y, width, height, xBounds, {min: -2000, max: 100}, 3, 0.7, 1);
     super(props);
     this.ref = Math.random();
   }

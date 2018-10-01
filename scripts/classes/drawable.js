@@ -15,6 +15,7 @@ class Drawable {
 
   draw(context) {
     if (this.image) {
+      context.shadowBlur = 0;
       context.drawImage(this.image, this.x, this.y, this.width, this.height);
     } else {
       context.beginPath();
@@ -27,6 +28,9 @@ class Drawable {
 
   delete() {
     delete(game.objects[this.ref]);
+    if (this.constructor.__proto__.name === "Enemy") {
+      game.changeScore(25);
+    }
   }
 }
 

@@ -16,6 +16,10 @@ class Message {
     context.font = this.font;
     context.fillStyle = this.color;
     context.textAlign = this.alignment;
+    context.shadowColor = this.color;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+    context.shadowBlur = 10;
     context.fillText(this.text, this.x, this.y);
     if (this.delay) {
       setTimeout(this.erase.bind(this), this.delay);

@@ -31,6 +31,13 @@ img {
   border-radius: 8px;
 }
 
+#score {
+  box-shadow: 0 0 30px #2b4ece;
+  position: absolute;
+  margin: 50px 0px 0px 130px;
+  border-radius: 8px;
+}
+
 .hidden {
   display: none;
 }
