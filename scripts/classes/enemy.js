@@ -1,6 +1,7 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
 import { game } from '../main.js';
+import { laserFire, rocketHit } from '../objects/sounds.js';
 
 class Enemy extends Killable {
   constructor(props) {
@@ -27,7 +28,13 @@ class Enemy extends Killable {
         damage: 2
       });
       missle.setImage(image);
+      laserFire();
     }
+  }
+
+  getHit(damage) {
+    rocketHit();
+    super.getHit(damage);
   }
 
   translate() {

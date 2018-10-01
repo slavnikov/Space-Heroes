@@ -1,6 +1,7 @@
 import Movable from './movable.js';
 import Explosion from './explosion.js';
 import Fragment from './fragment_particle.js';
+import { explosion } from '../objects/sounds.js';
 
 class Killable extends Movable {
   constructor(props) {
@@ -18,6 +19,7 @@ class Killable extends Movable {
     if (this.hp <= 0) {
       this.delete();
     }
+    explosion();
   }
 
   delete() {

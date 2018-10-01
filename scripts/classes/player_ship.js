@@ -1,6 +1,7 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
 import { game, lifeBar } from '../main.js';
+import { rocketFire, laserHit } from '../objects/sounds.js';
 
 class PlayerShip extends Killable {
   constructor(props) {
@@ -28,9 +29,10 @@ class PlayerShip extends Killable {
       vx: 0,
       vy: -8,
       foe: "Enemy",
-      damage: 10
+      damage: 1
     });
     missle.setImage(image);
+    rocketFire();
   }
 
   toggleReload() {
@@ -51,6 +53,7 @@ class PlayerShip extends Killable {
 
   getHit(damage) {
     super.getHit(damage);
+    laserHit();
     this.drawLifeBar();
   }
 
