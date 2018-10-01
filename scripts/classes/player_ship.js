@@ -55,6 +55,7 @@ class PlayerShip extends Killable {
     super.getHit(damage);
     laserHit();
     this.drawLifeBar();
+    game.changeScore(-2);
   }
 
   delete () {

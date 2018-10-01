@@ -34,6 +34,7 @@ class Enemy extends Killable {
   getHit(damage) {
     rocketHit();
     super.getHit(damage);
+    game.changeScore(2);
   }
 
   translate() {

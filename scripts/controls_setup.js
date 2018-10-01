@@ -10,6 +10,7 @@ function keyDownHandler(e) {
     if (!game.ship.needsReload) {
       game.ship.fireMissle();
       game.ship.toggleReload();
+      game.changeScore(-1);
     }
   }
 
