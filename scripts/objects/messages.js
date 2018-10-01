@@ -45,6 +45,15 @@ export const level2M = new Message(
   720 / 2
 );
 
+export const level3M = new Message(
+  "50px Righteous",
+  "white",
+  "center",
+  "Level 3: The Third Wave",
+  1250 / 2,
+  720 / 2
+);
+
 export const pressP = new Message(
   "75px Righteous",
   "white",

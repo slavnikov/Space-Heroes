@@ -1,12 +1,14 @@
 import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
 import FluidGrunt from '../classes/fluid_grunt.js';
-import { level2M } from '../objects/messages.js';
+import { level3M } from '../objects/messages.js';
 
 function level3() {
   const enemies = [];
   const image = new Image();
   image.src = "assets/theme_1/enemies/grunt.png";
+  const fluid_image = new Image();
+  image.src = "assets/theme_1/enemies/fluid_grunt.png";
 
   for (let j = 1; j < 4; j++) {
     for (let i = 0; i < 10; i++) {
@@ -47,13 +49,13 @@ function level3() {
         vy: 1,
         hp: 3,
       });
-      enemy.setImage(image);
+      enemy.setImage(fluid_image);
 
       enemies.push(enemy);
     }
   }
 
-  return new Level(enemies, level2M.setDelay(3e3));
+  return new Level(enemies, level3M.setDelay(3e3));
 }
 
 

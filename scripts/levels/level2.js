@@ -5,9 +5,9 @@ import { level2M } from '../objects/messages.js';
 function level2() {
   const enemies = [];
   const image = new Image();
-  image.src = "assets/theme_1/enemies/grunt.png";
+  image.src = "assets/theme_1/enemies/fluid_grunt.png";
 
-  for (var j = 1; j < 4; j++) {
+  for (var j = 1; j < 5; j++) {
     for (var i = 0; i < 10; i++) {
       const x = i * 100 + 50;
       const y = j * -125;

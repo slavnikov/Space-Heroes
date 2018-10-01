@@ -27,7 +27,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level3, level1, level2];
+    this.levels = [level1, level2, level3];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
 
@@ -42,7 +42,7 @@ class Game {
 
   setupNextLevel () {
 
-    const nextLevel = this.levels[this.nextLevelIdx];
+    const nextLevel = this.levels[this.nextLevelIdx % this.levels.length];
 
     if (nextLevel) {
       nextLevel().setup();
@@ -127,6 +127,14 @@ class Game {
     this.messages ={};
     this.nextLevelIdx = 0;
     this.play();
+  }
+
+  eraseObject(object) {
+    delete(this.objects[object.ref]);
+  }
+
+  drwaObject(object) {
+    this.objects[object.ref] = object;
   }
 }
 

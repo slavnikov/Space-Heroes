@@ -1,4 +1,5 @@
 import Movable from './movable.js';
+import Explosion from './explosion.js';
 
 class Killable extends Movable {
   constructor(props) {
@@ -16,6 +17,11 @@ class Killable extends Movable {
     if (this.hp <= 0) {
       this.delete();
     }
+  }
+
+  delete() {
+    new Explosion(this);
+    super.delete();
   }
 }
 
