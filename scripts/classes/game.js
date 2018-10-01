@@ -89,7 +89,7 @@ class Game {
     this.ship = createPlayerShip();
     this.objects.player = this.ship;
     this.messages = {};
-    this.changeScore(0);
+    this.changeScore(this.score * -1);
     this.setupNextLevel();
     this.currentInterval = setInterval(this.renderScreen, 20);
   }
