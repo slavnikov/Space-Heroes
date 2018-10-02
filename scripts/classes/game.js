@@ -72,11 +72,11 @@ class Game {
       this.haveResetLevel = true;
     }
 
-    this.writeMessages();
 
     Object.values(this.objects).forEach((object) => {
       object.draw(this.context);
     });
+    this.writeMessages();
   }
 
   writeMessages() {

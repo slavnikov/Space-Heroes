@@ -19,7 +19,7 @@ body {
 
 img {
   position: relative;
-    top: -406px;
+    top: -450px;
     z-index: -1;
 }
 
@@ -78,6 +78,43 @@ img {
   font-family: Righteous;
   font-size: 15px;
   cursor: pointer;
+}
+
+#score-list {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 210px;
+  height: 720px;
+  overflow-y: hidden;
+}
+
+#score-list h3 {
+  color: #1ba8f0;
+  font-family: Righteous;
+  text-shadow: 0 0 10px #1ba8f0;
+  opacity: .9;
+
+}
+
+.score-li {
+  color: #1ba8f0;
+  font-family: Righteous;
+  width: 210px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.score-li p {
+  margin: 5px 0px;
+  opacity: .6;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Righteous);

@@ -1,7 +1,7 @@
 import Game from './classes/game.js';
 import BackgroundRender from './classes/background_render.js';
 import {setupControlls} from './controls_setup.js';
-import {highScoreSubmit} from './high_score_util.js';
+import { drawHighScores } from './high_score_util.js';
 
 const config = {
   apiKey: "AIzaSyB_iaetuKXXZBn_wsOyY3XNOoUfHQc60FU",
@@ -24,6 +24,7 @@ setupControlls();
 document.addEventListener("DOMContentLoaded", function (e) {
   firebase.initializeApp(config);
   backgroundInterval = setInterval(game.playBackgournd, 20);
+  drawHighScores();
 
   // firebase.database().ref('name2/').set({
   //   score: 200
