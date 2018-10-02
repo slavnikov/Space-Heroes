@@ -9,7 +9,7 @@ function createPlayerShip() {
     y: 670,
     width: 100,
     height: 75,
-    hp: 1,
+    hp: 100,
   });
   ship.setImage(image);
 
