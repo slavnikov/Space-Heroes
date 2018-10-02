@@ -89,6 +89,8 @@ class Game {
     this.messages = {};
     this.changeScore(this.score * -1);
     this.setupNextLevel();
+    $("#life-bar").removeClass("hidden");
+    $("#score").removeClass("hidden");
     this.currentInterval = setInterval(this.renderScreen, 20);
   }
 

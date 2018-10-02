@@ -4,6 +4,7 @@ body {
   max-height: 1080px;
   overflow-x: hidden;
   overflow-y: hidden;
+  margin: 0px;
 }
 
 #canvases {
@@ -83,7 +84,7 @@ img {
 #score-list {
   position: absolute;
   top: 0px;
-  right: 10px;
+  right: 25px;
   margin: 0px;
   padding: 0px;
   list-style: none;
