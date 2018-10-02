@@ -4,7 +4,7 @@ import { game } from '../main.js';
 export const scoreMessage = (score) => {
   return new Message (
     "30px Righteous",
-    "blue",
+    "#1ba8f0",
     "center",
     `${score}`,
     150 / 2,
@@ -23,7 +23,7 @@ export const gameOver = new Message(
 
 export const cleared = new Message(
   "75px Righteous",
-  "blue",
+  "#1ba8f0",
   "center",
   "LEVEL CLEARED!",
   1250 / 2,

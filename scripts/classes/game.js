@@ -120,12 +120,15 @@ class Game {
   }
 
   gameOver() {
+    this.ship = null;
     this.messages = {};
     this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
     this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
+    $("#high-score").removeClass("hidden");
   }
 
   restart() {
+    $("#high-score").addClass("hidden");
     clearInterval(this.currentInterval);
     this.objects = {};
     this.messages ={};

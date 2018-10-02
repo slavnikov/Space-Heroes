@@ -1,6 +1,6 @@
 import Game from './classes/game.js';
 import BackgroundRender from './classes/background_render.js';
-import setupControlls from './controls_setup.js';
+import {setupControlls} from './controls_setup.js';
 import {highScoreSubmit} from './high_score_util.js';
 
 const config = {
@@ -19,11 +19,10 @@ export const backgroundRender = new BackgroundRender();
 export let backgroundInterval = null;
 
 backgroundRender.initiateBackground();
-setupControlls(document);
+setupControlls();
 
 document.addEventListener("DOMContentLoaded", function (e) {
   firebase.initializeApp(config);
-  $("#high-score").submit(highScoreSubmit);
   backgroundInterval = setInterval(game.playBackgournd, 20);
 
   // firebase.database().ref('name2/').set({

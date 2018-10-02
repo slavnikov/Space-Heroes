@@ -2,15 +2,17 @@ import Missle from './classes/missle.js';
 import { game, backgroundInterval } from './main.js';
 
 function keyDownHandler(e) {
-  if(e.keyCode == 68) { //D
-    game.ship.moveHorizantally(20);
-  } else if(e.keyCode == 65) { //A
-    game.ship.moveHorizantally(-20);
-  } else if(e.keyCode == 32) { //SPACE
-    if (!game.ship.needsReload) {
-      game.ship.fireMissle();
-      game.ship.toggleReload();
-      game.changeScore(-1);
+  if (game.ship) {
+    if(e.keyCode == 68) { //D
+      game.ship.moveHorizantally(20);
+    } else if(e.keyCode == 65) { //A
+      game.ship.moveHorizantally(-20);
+    } else if(e.keyCode == 32) { //SPACE
+      if (!game.ship.needsReload) {
+        game.ship.fireMissle();
+        game.ship.toggleReload();
+        game.changeScore(-1);
+      }
     }
   }
 
@@ -42,14 +44,16 @@ function keyDownHandler(e) {
 }
 
 function keyUpHandler(e) {
-  if(e.keyCode == 68 && game.ship.vx > 0) {
-    game.ship.moveHorizantally(0);
-  } else if(e.keyCode == 65 && game.ship.vx < 0) {
-    game.ship.moveHorizantally(0);
-  }
+  if (game.ship) {
+    if(e.keyCode == 68 && game.ship.vx > 0) {
+      game.ship.moveHorizantally(0);
+    } else if(e.keyCode == 65 && game.ship.vx < 0) {
+      game.ship.moveHorizantally(0);
+    }
 
-  if (e.keyCode == 32) { //SPACE
-    game.ship.toggleReload();
+    if (e.keyCode == 32) { //SPACE
+      game.ship.toggleReload();
+    }
   }
   // test code for configuring vertical movement
 
@@ -61,9 +65,12 @@ function keyUpHandler(e) {
 }
 
 
-function setupControlls(document) {
-  document.addEventListener('keydown', keyDownHandler, false);
-  document.addEventListener('keyup', keyUpHandler, false);
-}
+export const setupControlls = () => {
+  $(document).on('keydown', keyDownHandler);
+  $(document).on('keyup', keyUpHandler);
+};
 
-export default setupControlls;
+export const removeControlls = () => {
+  $(document).off('keydown', keyDownHandler);
+  $(document).off('keyup', keyUpHandler);
+};
