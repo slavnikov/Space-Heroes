@@ -45,7 +45,6 @@ class Game {
   }
 
   setupNextLevel () {
-
     const nextLevel = this.levels[this.nextLevelIdx % this.levels.length];
 
     if (nextLevel) {
@@ -57,7 +56,6 @@ class Game {
       this.messages[msgObjects.earthSafe.ref] = msgObjects.earthSafe;
       this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
     }
-
   }
 
   renderScreen() {

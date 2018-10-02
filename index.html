@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 
-    <script type="module" src="scripts/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <title></title>
+    <script type="module" src="scripts/main.js"></script>
+    <title>Space Invaders</title>
   </head>
   <body>
     <div id="canvases">
@@ -15,6 +16,10 @@
       <canvas id="score" width="150" height="75"></canvas>
       <canvas id="field" width="1250" height="720"></canvas>`
     </div>
+    <form id="high-score">
+      <input id="name" type="text">
+      <input type="submit">
+    </form>
     <img src="assets/background/earth.jpg" alt="">
   </body>
 </html>
