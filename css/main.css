@@ -118,4 +118,26 @@ img {
   opacity: .6;
 }
 
+#links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 570px;
+  left: 50px;
+}
+
+#links a {
+  color: #1ba8f0;
+  font-size: 35px;
+  text-shadow: 0 0 4px #1ba8f0;
+  opacity: .7;
+  transition: opacity .5s, text-shadow .5s;
+  margin-bottom: 10px;
+}
+
+#links a:hover {
+  text-shadow: 0 0 8px #1ba8f0;
+  opacity: 1;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Righteous);
