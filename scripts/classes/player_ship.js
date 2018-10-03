@@ -29,7 +29,7 @@ class PlayerShip extends Killable {
       vx: 0,
       vy: -8,
       foe: "Enemy",
-      damage: 1
+      damage: 20
     });
     missle.setImage(image);
     rocketFire();

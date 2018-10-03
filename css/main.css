@@ -140,4 +140,14 @@ img {
   opacity: 1;
 }
 
+h1 {
+  font-family: Righteous;
+  color: #1ba8f0;
+  text-shadow: 0 0 10px #1ba8f0;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  text-align: center;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Righteous);
