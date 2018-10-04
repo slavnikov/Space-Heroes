@@ -1,6 +1,7 @@
 import Movable from './movable.js';
 import { game } from '../main.js';
 import Explosion from './explosion.js';
+import Fragment from './fragment_particle.js';
 
 class Missle extends Movable {
   constructor(props) {
@@ -39,7 +40,8 @@ class Missle extends Movable {
           this.y <= hitBox[2] &&
           this.y >= hitBox[3]
         ) {
-          new Explosion({x: this.x + this.width / 2, y: this.y, width: 20, height: 20});
+          // new Explosion({x: this.x + this.width / 2, y: this.y, width: 20, height: 20});
+          this.triggerEffect();
           return true;
         } else {
           return false;
@@ -51,12 +53,23 @@ class Missle extends Movable {
           this.y + this.height <= hitBox[2] &&
           this.y + this.height >= hitBox[3]
         ) {
-          new Explosion({x: this.x + this.width / 2, y: this.y + this.height, width: 20, height: 20});
+          // new Explosion({x: this.x + this.width / 2, y: this.y + this.height, width: 20, height: 20});
+          this.triggerEffect();
           return true;
         } else {
           return false;
         }
       }
+    }
+  }
+
+  triggerEffect() {
+    if (this.damage > 0) {
+      const yVar = this.vy < 0 ? this.y : this.y + this.height;
+      new Explosion({x: this.x + this.width / 2, y: yVar, width: 20, height: 20});
+    }
+    for (var i = 0; i < (this.damage * -1); i++) {
+      new Fragment(this);
     }
   }
 
