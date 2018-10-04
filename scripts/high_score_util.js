@@ -25,7 +25,7 @@ function highScoreSubmit(e) {
 export function drawHighScores() {
   const list = $("#score-list");
   list.empty();
-  list.append("<h3>Hall of Honor</h3>");
+  list.append("<h3>Hall of Heroes</h3>");
 
   firebase.database().ref('/').once('value').then((response) => {
     const listing = response.val();

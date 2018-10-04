@@ -19,9 +19,9 @@ function level2() {
         height: 87,
         xBounds: null,
         yBounds: {min: -2000, max: yMax},
-        vx: 3 * Math.pow(-1, y),
+        vx: 4 * Math.pow(-1, y),
         vy: 1,
-        hp: 3,
+        hp: 2,
       });
       enemy.setImage(image);
 

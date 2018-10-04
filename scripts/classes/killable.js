@@ -19,7 +19,6 @@ class Killable extends Movable {
     if (this.hp <= 0) {
       this.delete();
     }
-    explosion();
   }
 
   delete() {
@@ -27,6 +26,7 @@ class Killable extends Movable {
     for (var i = 0; i < 10; i++) {
       new Fragment(this);
     }
+    explosion();
 
     super.delete();
   }
