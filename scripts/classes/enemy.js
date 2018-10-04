@@ -40,6 +40,26 @@ class Enemy extends Killable {
   translate() {
     this.fireMissle(0.007);
     super.translate();
+    this.checkPlayerCollision();
+  }
+
+  checkPlayerCollision() {
+    if (!game.ship) {
+      return;
+    }
+    const hitBox = this.hitBox();
+    const offset = game.ship.width * 0.3;
+    const plHitBox = game.ship.hitBox();
+    if (
+      (
+        (hitBox[0] > plHitBox[0] + offset && hitBox[0] < plHitBox[1] - offset) ||
+        (hitBox[1] > plHitBox[0] + offset && hitBox[1] < plHitBox[1] - offset)
+      ) &&
+      hitBox[2] > plHitBox[3]
+    ) {
+      this.getHit(1000);
+      game.ship.getHit(1000);
+    }
   }
 
   // dropHealth() {
@@ -67,6 +87,10 @@ class Enemy extends Killable {
   delete() {
     // this.dropHealth();
     super.delete();
+  }
+
+  draw(context) {
+    super.draw(context);
   }
 }
 
