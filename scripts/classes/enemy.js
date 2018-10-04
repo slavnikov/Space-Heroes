@@ -1,7 +1,7 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
 import { game } from '../main.js';
-import { laserFire, rocketHit } from '../objects/sounds.js';
+import { laserFire, rocketHit, healthDrop, laserHit, heal } from '../objects/sounds.js';
 import { healthImage, laserImage } from '../objects/images.js';
 
 class Enemy extends Killable {
@@ -23,14 +23,14 @@ class Enemy extends Killable {
         vy: 15,
         foe: "PlayerShip",
         damage: 2,
-        image: laserImage
+        image: laserImage,
+        fireSound: laserFire,
+        impactSound: laserHit,
       });
-      laserFire();
     }
   }
 
   getHit(damage) {
-    rocketHit();
     super.getHit(damage);
     game.changeScore(2);
   }
@@ -74,6 +74,8 @@ class Enemy extends Killable {
         foe: "PlayerShip",
         damage: -15,
         image: healthImage,
+        fireSound: healthDrop,
+        impactSound: heal,
       });
     }
   }

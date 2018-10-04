@@ -27,3 +27,15 @@ export const explosion = () => {
   sound.volume = 0.3;
   sound.play();
 };
+
+export const heal = () => {
+  const sound = new Audio("assets/sounds/heal.mp3");
+  sound.volume = 0.3;
+  sound.play();
+};
+
+export const healthDrop = () => {
+  const sound = new Audio("assets/sounds/health-fire.mp3");
+  sound.volume = 0.3;
+  sound.play();
+};

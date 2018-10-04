@@ -10,10 +10,10 @@ class Missle extends Movable {
     this.damage = props.damage || 1;
     this.ref = Math.random();
     this.image = props.image;
-    this.fireSound = props.fireSound;
     this.collideSound = props.collidesSound;
-    this.effect = props.effect;
+    this.impactSound = props.impactSound;
 
+    props.fireSound();
     game.objects[this.ref] = this;
   }
 
@@ -55,6 +55,7 @@ class Missle extends Movable {
     for (var i = 0; i < (this.damage * -1); i++) {
       new Fragment(this);
     }
+    this.impactSound();
   }
 
   processTargets() {
