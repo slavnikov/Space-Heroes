@@ -1,4 +1,4 @@
-![alt text](assets/logo/logo.png "Space Heroes Logo")
+![alt text](assets/logo/logo1.png "Space Heroes Logo")
 
 ### Overview
 
