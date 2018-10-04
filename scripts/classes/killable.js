@@ -15,6 +15,15 @@ class Killable extends Movable {
   }
 
   getHit(damage) {
+    if (damage < 0) {
+      if (this.hp < this.maxHp) {
+        this.hp -= damage;
+        if (this.hp > this.maxHp) {
+          this.hp = this.maxHp;
+        }
+        return;
+      }
+    }
     this.hp -= damage;
     if (this.hp <= 0) {
       this.delete();

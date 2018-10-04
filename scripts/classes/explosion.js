@@ -3,12 +3,7 @@ import { game } from '../main.js';
 
 class Explosion extends Drawable {
   constructor(object) {
-    super({
-      x: object.x,
-      y: object.y,
-      width: object.width,
-      height: object.height
-    });
+    super(object);
     this.timerID = null;
     this.frameIdx = 0;
     this.ref = Math.random();

@@ -1,3 +1,2 @@
-const healthImage = new Image();
-helathImage.src = 'assets/theme_1/powers/health.png';
-export const healthImage;
+export const healthImage = new Image();
+healthImage.src = 'assets/theme_1/powers/health.png';
