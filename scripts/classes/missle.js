@@ -32,34 +32,18 @@ class Missle extends Movable {
   detectHit(object) {
     if (object.killable) {
       const hitBox = object.hitBox();
-
-      if (this.vy < 0) {
+      const yVar = this.vy < 0 ? this.y : this.y + this.height;
         if (
           this.x + this.width / 2 >= hitBox[0] &&
           this.x + this.width / 2 <= hitBox[1] &&
-          this.y <= hitBox[2] &&
-          this.y >= hitBox[3]
+          yVar <= hitBox[2] &&
+          yVar >= hitBox[3]
         ) {
-          // new Explosion({x: this.x + this.width / 2, y: this.y, width: 20, height: 20});
           this.triggerEffect();
           return true;
         } else {
           return false;
         }
-      } else {
-        if (
-          this.x + this.width / 2 >= hitBox[0] &&
-          this.x + this.width / 2 <= hitBox[1] &&
-          this.y + this.height <= hitBox[2] &&
-          this.y + this.height >= hitBox[3]
-        ) {
-          // new Explosion({x: this.x + this.width / 2, y: this.y + this.height, width: 20, height: 20});
-          this.triggerEffect();
-          return true;
-        } else {
-          return false;
-        }
-      }
     }
   }
 
