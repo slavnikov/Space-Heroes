@@ -41,6 +41,33 @@ class Enemy extends Killable {
     this.fireMissle(0.007);
     super.translate();
   }
+
+  // dropHealth() {
+  //   if (Math.random() < 1) {
+  //     // const image = new Image();
+  //     // image.src = 'assets/theme_1/ammo/grunt_missle.png';
+  //
+  //     const missle = new Missle({
+  //       x: this.x + this.width /2,
+  //       y: this.y + this.height,
+  //       width: 10,
+  //       height: 10,
+  //       xBounds: null,
+  //       yBounds: {min: -50, max: 800},
+  //       vx: 0,
+  //       vy: 2,
+  //       foe: "PlayerShip",
+  //       damage: -30
+  //     });
+  //     // missle.setImage(image);
+  //     // laserFire();
+  //   }
+  // }
+
+  delete() {
+    // this.dropHealth();
+    super.delete();
+  }
 }
 
 export default Enemy;

@@ -8,6 +8,10 @@ class Missle extends Movable {
     this.foe = props.foe;
     this.damage = props.damage || 1;
     this.ref = Math.random();
+    this.image = props.image;
+    this.fireSound = props.fireSound;
+    this.collideSound = props.collidesSound;
+    this.effect = props.effect;
 
     game.objects[this.ref] = this;
   }
