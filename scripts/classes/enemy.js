@@ -64,7 +64,7 @@ class Enemy extends Killable {
   }
 
   dropHealth() {
-    if (Math.random() < 1) {
+    if (Math.random() < 0.2) {
       const missle = new Missle({
         x: this.x + this.width /2,
         y: this.y + this.height,
@@ -75,11 +75,9 @@ class Enemy extends Killable {
         vx: 0,
         vy: 2,
         foe: "PlayerShip",
-        damage: -30,
+        damage: -15,
         image: healthImage,
       });
-      // missle.setImage(image);
-      // laserFire();
     }
   }
 
