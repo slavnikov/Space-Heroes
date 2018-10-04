@@ -9,10 +9,6 @@ class Drawable {
     this.image = props.image;
   }
 
-  setImage(image){
-    this.image = image;
-  }
-
   draw(context) {
     if (this.image) {
       context.shadowBlur = 0;

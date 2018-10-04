@@ -17,7 +17,7 @@ class Explosion extends Drawable {
     } else {
       const image = new Image();
       image.src = `assets/theme_1/explosion/${this.frameIdx}.png`;
-      this.setImage(image);
+      this.image = image;
       this.frameIdx++;
     }
   }
