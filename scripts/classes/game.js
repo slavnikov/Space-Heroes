@@ -32,6 +32,7 @@ class Game {
     this.levels = [level1, level2, level3];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
+    this.over = false;
 
     this.ship = null;
 
@@ -122,11 +123,14 @@ class Game {
   }
 
   gameOver() {
-    this.ship = null;
-    this.messages = {};
-    this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
-    this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
-    $("#high-score").removeClass("hidden");
+    if (!this.over) {
+      this.ship = null;
+      this.messages = {};
+      this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
+      this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
+      $("#high-score").removeClass("hidden");
+    }
+    this.over = true;
   }
 
   restart() {
@@ -135,6 +139,7 @@ class Game {
     this.objects = {};
     this.messages ={};
     this.nextLevelIdx = 0;
+    this.over = false;
     this.play();
   }
 
