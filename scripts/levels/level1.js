@@ -1,11 +1,10 @@
 import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
 import { level1M } from '../objects/messages.js';
+import { classicGruntImage } from '../objects/images.js';
 
 function level1() {
   const enemies = [];
-  const image = new Image();
-  image.src = "assets/theme_1/enemies/grunt.png";
 
   for (var j = 1; j < 4; j++) {
     for (var i = 0; i < 10; i++) {
@@ -23,8 +22,8 @@ function level1() {
         vx: 1.5,
         vy: 0.6,
         hp: 3,
+        image: classicGruntImage,
       });
-      enemy.setImage(image);
 
       enemies.push(enemy);
     }

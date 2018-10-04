@@ -2,6 +2,7 @@ import Killable from './killable.js';
 import Missle from './missle.js';
 import { game, lifeBar } from '../main.js';
 import { rocketFire, laserHit } from '../objects/sounds.js';
+import { missileImage } from '../objects/images.js';
 
 class PlayerShip extends Killable {
   constructor(props) {
@@ -16,9 +17,6 @@ class PlayerShip extends Killable {
   }
 
   fireMissle() {
-    const image = new Image();
-    image.src = 'assets/theme_1/ammo/ship_missle.png';
-
     const missle = new Missle({
       x: this.x + this.width / 2,
       y: this.y,
@@ -29,9 +27,10 @@ class PlayerShip extends Killable {
       vx: 0,
       vy: -8,
       foe: "Enemy",
-      damage: 1
+      damage: 5,
+      image: missileImage,
     });
-    missle.setImage(image);
+
     rocketFire();
   }
 

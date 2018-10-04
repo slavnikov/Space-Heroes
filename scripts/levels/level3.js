@@ -2,13 +2,10 @@ import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
 import FluidGrunt from '../classes/fluid_grunt.js';
 import { level3M } from '../objects/messages.js';
+import { classicGruntImage, fluidGruntImage } from '../objects/images.js';
 
 function level3() {
   const enemies = [];
-  const image = new Image();
-  image.src = "assets/theme_1/enemies/grunt.png";
-  const fluid_image = new Image();
-  fluid_image.src = "assets/theme_1/enemies/fluid_grunt.png";
 
   for (let j = 1; j < 4; j++) {
     for (let i = 0; i < 10; i++) {
@@ -26,8 +23,8 @@ function level3() {
         vx: 1.5,
         vy: 0.6,
         hp: 3,
+        image: classicGruntImage,
       });
-      enemy.setImage(image);
 
       enemies.push(enemy);
     }
@@ -48,8 +45,8 @@ function level3() {
         vx: 3.5 * Math.pow(-1, y),
         vy: 1,
         hp: 2,
+        image: fluidGruntImage,
       });
-      enemy.setImage(fluid_image);
 
       enemies.push(enemy);
     }

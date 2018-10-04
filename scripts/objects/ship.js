@@ -1,8 +1,7 @@
 import PlayerShip from '../classes/player_ship.js';
+import { shipImage } from './images.js';
 
 function createPlayerShip() {
-  const image = new Image();
-  image.src = 'assets/theme_1/player/ship.png';
 
   const ship = new PlayerShip({
     x: 1250 / 2 - 50,
@@ -10,8 +9,8 @@ function createPlayerShip() {
     width: 100,
     height: 75,
     hp: 100,
+    image: shipImage,
   });
-  ship.setImage(image);
 
   return ship;
 }

@@ -2,7 +2,7 @@ import Killable from './killable.js';
 import Missle from './missle.js';
 import { game } from '../main.js';
 import { laserFire, rocketHit } from '../objects/sounds.js';
-import { healthImage } from '../objects/images.js';
+import { healthImage, laserImage } from '../objects/images.js';
 
 class Enemy extends Killable {
   constructor(props) {
@@ -12,9 +12,6 @@ class Enemy extends Killable {
 
   fireMissle(chance) {
     if (this.y + this.height >= 0 && Math.random() < chance) {
-      const image = new Image();
-      image.src = 'assets/theme_1/ammo/grunt_missle.png';
-
       const missle = new Missle({
         x: this.x + this.width /2,
         y: this.y + this.height,
@@ -25,9 +22,9 @@ class Enemy extends Killable {
         vx: 0,
         vy: 15,
         foe: "PlayerShip",
-        damage: 2
+        damage: 2,
+        image: laserImage
       });
-      missle.setImage(image);
       laserFire();
     }
   }

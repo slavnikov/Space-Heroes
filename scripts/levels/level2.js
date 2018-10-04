@@ -1,11 +1,10 @@
 import Level from '../classes/level.js';
 import FluidGrunt from '../classes/fluid_grunt.js';
 import { level2M } from '../objects/messages.js';
+import { fluidGruntImage } from '../objects/images.js';
 
 function level2() {
   const enemies = [];
-  const image = new Image();
-  image.src = "assets/theme_1/enemies/fluid_grunt.png";
 
   for (var j = 1; j < 5; j++) {
     for (var i = 0; i < 10; i++) {
@@ -22,8 +21,8 @@ function level2() {
         vx: 4 * Math.pow(-1, y),
         vy: 1,
         hp: 2,
+        image: fluidGruntImage,
       });
-      enemy.setImage(image);
 
       enemies.push(enemy);
     }
