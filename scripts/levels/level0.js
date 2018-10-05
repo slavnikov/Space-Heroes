@@ -1,23 +1,23 @@
 import Level from '../classes/level.js';
-import Shifter from '../classes/shifter.js';
+import Bouncer from '../classes/bouncer.js';
 import { levelM } from '../objects/messages.js';
-import { shifterWhite } from '../objects/images.js';
+import { bouncerImage } from '../objects/images.js';
 
 function level0() {
   const enemies = [];
 
-  enemies.push(new Shifter({
-    x: 1250 / 2,
-    y: -10,
+  enemies.push(new Bouncer({
+    x: -100,
+    y: -100,
     width: 50,
     height: 50,
-    xBounds: {min: 0, max: 1250},
-    yBounds: {min: -2000, max: 600},
-    vx: 0,
-    vy: 1,
-    hp: 3,
+    xBounds: {min: -100, max: 1350},
+    yBounds: {min: -100, max: 700},
+    vx: 3,
+    vy: 3,
+    hp: 25,
     rateOfFire: 0,
-    image: shifterWhite,
+    image: bouncerImage,
   }));
   return new Level(enemies, levelM().setDelay(3e3));
 }
