@@ -5,7 +5,7 @@ const quotes = [
   "To infinity, and beyond!",
   "One small step for man ...",
   "Live long and prosper.",
-  "Try not. Do. Or do not.",
+  "Try not. Do… or do not. There is no try.",
   "The ships hung in the sky, ...",
   "Any planet is 'Earth' to those that live on it.",
   "Never fire a laser at a mirror.",
@@ -21,6 +21,15 @@ const quotes = [
   "Now that's what we call a close encounter.",
   "I have got to get me one of these.",
   "We're not hit! Stop side-set driving!",
+  "Don’t everybody thank me at once.",
+  "Let’s keep a little optimism here.",
+  "You want luck on your side? Never wash your hat.",
+  "Pew pew pew.",
+  "You want to live forever?",
+  "M.I. does the dying. Fleet just does the flying.",
+  "Never surrender. Never retreat. Never give up.",
+  "You're some sort of big, fat, smart-bug, aren't you?",
+  "Remember your training, and you will make it out alive!",
 ];
 
 export const levelM = () => {

@@ -73,7 +73,7 @@ class Enemy extends Killable {
         vx: 0,
         vy: 2,
         foe: "PlayerShip",
-        damage: -15,
+        damage: -10,
         image: healthImage,
         fireSound: healthDrop,
         impactSound: heal,
