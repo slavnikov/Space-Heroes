@@ -25,21 +25,24 @@ class Shifter extends Enemy {
   }
 
   shiftVelocities() {
-    this.vx = (Math.random() * 25) * (Math.random() > 0.5 ? 1 : -1);
+    this.vx = (Math.random() * 20) * (Math.random() > 0.5 ? 1 : -1);
     while (this.x + this.vx > this.xBounds.max || this.x + this.vx < this.xBounds.min) {
-      this.vx = (Math.random() * 25) * (Math.random() > 0.5 ? 1 : -1);
+      this.vx = (Math.random() * 20) * (Math.random() > 0.5 ? 1 : -1);
     }
-    this.vy = (25 - this.vx) * (Math.random() > 0.5 ? 1 : -1);
+    this.vy = (20 - this.vx) * (Math.random() > 0.5 ? 1 : -1);
     while (this.y + this.vy > this.yBounds.max || this.y + this.vy < this.yBounds.min) {
-      this.vy = (25 - this.vx) * (Math.random() > 0.5 ? 1 : -1);
+      this.vy = (20 - this.vx) * (Math.random() > 0.5 ? 1 : -1);
     }
     this.setImage(shifterWhite);
     this.voulnarable = true;
     this.timer = null;
-    setTimeout(this.stop.bind(this), 3e2);
+    setTimeout(this.stop.bind(this), 5e2);
   }
 
   fireMissle() {
+    if (!game.ship) {
+      return null;
+    }
     const myX = this.x + this.width / 2;
     const myY = this.y + this.height;
     const playerX = game.ship.x + game.ship.width / 2;
@@ -47,7 +50,7 @@ class Shifter extends Enemy {
     const myVx = playerX - myX;
     const myVy = playerY - myY;
 
-    if (this.vx === 0 && this.vy === 0 && Math.random() < 0.1) {
+    if (this.vx === 0 && this.vy === 0 && Math.random() < 0.07) {
       const missle = new Missle({
         x: myX,
         y: myY,
