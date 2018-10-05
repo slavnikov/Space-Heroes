@@ -8,7 +8,7 @@ function level5() {
 
   for (var k = 0; k < 5; k++) {
     enemies.push(new Shifter({
-      x: (1250 / 6) * (k + 1),
+      x: 1250 / 2,
       y: -100,
       width: 50,
       height: 50,
