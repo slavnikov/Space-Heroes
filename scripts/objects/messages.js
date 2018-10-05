@@ -115,7 +115,7 @@ export const controls2 = new Message(
   "30px Righteous",
   "white",
   "center",
-  "Ingame, use P to pause and unpause or R to restart",
+  "In game, use P to pause and unpause or R to restart",
   1250 / 2,
   720 / 2 + 85
 );
