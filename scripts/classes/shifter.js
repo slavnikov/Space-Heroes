@@ -10,6 +10,7 @@ class Shifter extends Enemy {
     this.shifting = false;
     this.framesMoves = 0;
     this.timer = null;
+    this.voulnarable = false;
   }
 
   shift() {
@@ -33,6 +34,7 @@ class Shifter extends Enemy {
       this.vy = (25 - this.vx) * (Math.random() > 0.5 ? 1 : -1);
     }
     this.setImage(shifterWhite);
+    this.voulnarable = true;
     this.timer = null;
     setTimeout(this.stop.bind(this), 3e2);
   }
@@ -76,7 +78,7 @@ class Shifter extends Enemy {
   }
 
   getHit(damage) {
-    if(!this.shifting) {
+    if(!this.voulnarable) {
       super.getHit(0);
     } else {
       super.getHit(damage);

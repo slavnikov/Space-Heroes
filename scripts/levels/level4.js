@@ -31,10 +31,10 @@ function level4() {
     }
   }
 
-  for (var k = 0; k < 3; k++) {
+  for (var k = 0; k < 4; k++) {
     enemies.push(new Shifter({
       x: 1250 / 2,
-      y: -650,
+      y: -500,
       width: 50,
       height: 50,
       xBounds: {min: 0, max: 1250},
