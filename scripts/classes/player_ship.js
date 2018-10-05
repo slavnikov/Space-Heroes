@@ -27,7 +27,7 @@ class PlayerShip extends Killable {
       vx: 0,
       vy: -8,
       foe: "Enemy",
-      damage: 5,
+      damage: 1,
       image: missileImage,
       fireSound: rocketFire,
       impactSound: rocketHit,

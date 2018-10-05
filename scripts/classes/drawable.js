@@ -22,6 +22,10 @@ class Drawable {
     }
   }
 
+  setImage(image) {
+    this.image = image;
+  }
+
   delete() {
     delete(game.objects[this.ref]);
     if (this.constructor.__proto__.name === "Enemy") {

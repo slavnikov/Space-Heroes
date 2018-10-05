@@ -1,8 +1,10 @@
 import { backgroundRender } from '../main.js';
 import createPlayerShip from '../objects/ship.js';
+import level0 from '../levels/level0.js';
 import level1 from '../levels/level1.js';
 import level2 from '../levels/level2.js';
 import level3 from '../levels/level3.js';
+import level4 from '../levels/level4.js';
 import * as msgObjects from '../objects/messages.js';
 
 class Game {
@@ -29,7 +31,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level1, level2, level3];
+    this.levels = [level4, level1, level2, level3];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
     this.over = false;

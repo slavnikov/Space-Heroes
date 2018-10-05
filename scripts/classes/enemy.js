@@ -1,7 +1,7 @@
 import Killable from './killable.js';
 import Missle from './missle.js';
 import { game } from '../main.js';
-import { laserFire, rocketHit, healthDrop, laserHit, heal } from '../objects/sounds.js';
+import { laserFire, healthDrop, laserHit, heal } from '../objects/sounds.js';
 import { healthImage, laserImage } from '../objects/images.js';
 
 class Enemy extends Killable {

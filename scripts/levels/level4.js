@@ -1,12 +1,13 @@
 import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
+import Shifter from '../classes/shifter.js';
 import { level1M } from '../objects/messages.js';
-import { classicGruntImage } from '../objects/images.js';
+import { classicGruntImage, shifterWhite } from '../objects/images.js';
 
-function level1() {
+function level4() {
   const enemies = [];
 
-  for (var j = 1; j < 3; j++) {
+  for (var j = 1; j < 4; j++) {
     for (var i = 0; i < 10; i++) {
       const x = i * 100 + 50;
       const y = j * -150;
@@ -21,7 +22,7 @@ function level1() {
         yBounds: {min: -2000, max: yMax},
         vx: 1.5,
         vy: 0.6,
-        hp: 2,
+        hp: 4,
         rateOfFire: 0.007,
         image: classicGruntImage,
       });
@@ -30,9 +31,24 @@ function level1() {
     }
   }
 
+  for (var k = 0; k < 3; k++) {
+    enemies.push(new Shifter({
+      x: 1250 / 2,
+      y: -650,
+      width: 50,
+      height: 50,
+      xBounds: {min: 0, max: 1250},
+      yBounds: {min: -2000, max: 600},
+      vx: 0,
+      vy: 1,
+      hp: 2,
+      rateOfFire: 0,
+      image: shifterWhite,
+    }));
+  }
 
   return new Level(enemies, level1M.setDelay(3e3));
 }
 
 
-export default level1;
+export default level4;
