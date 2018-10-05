@@ -51,8 +51,8 @@ class Shifter extends Enemy {
       const missle = new Missle({
         x: myX,
         y: myY,
-        width: 10,
-        height: 10,
+        width: 14,
+        height: 14,
         xBounds: null,
         yBounds: {min: -50, max: 800},
         vx: myVx * 0.12,

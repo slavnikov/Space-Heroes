@@ -6,6 +6,8 @@ import level2 from '../levels/level2.js';
 import level3 from '../levels/level3.js';
 import level4 from '../levels/level4.js';
 import level5 from '../levels/level5.js';
+import level6 from '../levels/level6.js';
+import level7 from '../levels/level7.js';
 import * as msgObjects from '../objects/messages.js';
 
 class Game {
@@ -32,7 +34,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level0, level1, level2, level3, level5, level4];
+    this.levels = [level7, level1, level2, level5, level3, level4, level6];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
     this.over = false;

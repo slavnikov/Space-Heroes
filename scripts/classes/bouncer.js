@@ -30,6 +30,9 @@ class Bouncer extends Enemy {
   }
 
   fireMissle() {
+    if (!game.ship) {
+      return;
+    }
     const myX = this.x + this.width / 2;
     const myY = this.y + this.height;
     const playerX = game.ship.x + game.ship.width / 2;
@@ -37,12 +40,12 @@ class Bouncer extends Enemy {
     const myVx = playerX - myX;
     const myVy = playerY - myY;
 
-    if (this.x > 0 && this.y > 0 && Math.random() < 0.05) {
+    if (this.x > 0 && this.y > 0 && Math.random() < 0.01) {
       const missle = new Missle({
         x: myX,
         y: myY,
-        width: 10,
-        height: 10,
+        width: 14,
+        height: 14,
         xBounds: null,
         yBounds: {min: -50, max: 800},
         vx: myVx * 0.1,

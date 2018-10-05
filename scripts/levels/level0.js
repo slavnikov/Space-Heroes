@@ -13,17 +13,13 @@ function level0() {
     height: 50,
     xBounds: {min: -100, max: 1350},
     yBounds: {min: -100, max: 700},
-    vx: 3,
-    vy: 3,
+    vx: 2.5 + Math.random(),
+    vy: 2.5 + Math.random(),
     hp: 25,
     rateOfFire: 0,
     image: bouncerImage,
   }));
   return new Level(enemies, levelM().setDelay(3e3));
 }
-
-
-
-
 
 export default level0;
