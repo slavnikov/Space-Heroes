@@ -1,7 +1,7 @@
 import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
 import Shifter from '../classes/shifter.js';
-import { level1M } from '../objects/messages.js';
+import { levelM } from '../objects/messages.js';
 import { classicGruntImage, shifterWhite } from '../objects/images.js';
 
 function level4() {
@@ -47,7 +47,7 @@ function level4() {
     }));
   }
 
-  return new Level(enemies, level1M.setDelay(3e3));
+  return new Level(enemies, levelM().setDelay(3e3));
 }
 
 

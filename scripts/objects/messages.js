@@ -1,6 +1,39 @@
 import Message from '../classes/message.js';
 import { game } from '../main.js';
 
+const quotes = [
+  "To infinity, and beyond!",
+  "One small step for man ...",
+  "Live long and prosper.",
+  "Try not. Do. Or do not.",
+  "The ships hung in the sky, ...",
+  "Any planet is 'Earth' to those that live on it.",
+  "Never fire a laser at a mirror.",
+  "I'm sorry Dave. I'm afaid I can't' do that.",
+  "I don't need luck. I have ammo.",
+  "Great kid. Don't get cocky.",
+  "Never tell me the odds.",
+  "How do you get fuding for something like this?",
+  "Must go faster!",
+  "I ain't heard no fat lady!",
+  "I picked a helluva day to quit drinkin'.",
+  "Oh god, I hope they bring back Elvis.",
+  "Now that's what we call a close encounter.",
+  "I have got to get me one of these.",
+  "We're not hit! Stop side-set driving!",
+];
+
+export const levelM = () => {
+  return new Message(
+    "40px Righteous",
+    "white",
+    "center",
+    quotes[Math.floor(Math.random() * quotes.length)],
+    1250 / 2,
+    720 / 2
+  );
+};
+
 export const scoreMessage = (score) => {
   return new Message (
     "30px Righteous",
@@ -35,33 +68,6 @@ export const earthSafe = new Message(
   "blue",
   "center",
   "The Earth is safe! for now...",
-  1250 / 2,
-  720 / 2
-);
-
-export const level1M = new Message(
-  "50px Righteous",
-  "white",
-  "center",
-  "Level 1: The First Wave",
-  1250 / 2,
-  720 / 2
-);
-
-export const level2M = new Message(
-  "50px Righteous",
-  "white",
-  "center",
-  "Level 2: The Second Wave",
-  1250 / 2,
-  720 / 2
-);
-
-export const level3M = new Message(
-  "50px Righteous",
-  "white",
-  "center",
-  "Level 3: The Third Wave",
   1250 / 2,
   720 / 2
 );

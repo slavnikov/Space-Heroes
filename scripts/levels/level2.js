@@ -1,6 +1,6 @@
 import Level from '../classes/level.js';
 import FluidGrunt from '../classes/fluid_grunt.js';
-import { level2M } from '../objects/messages.js';
+import { levelM } from '../objects/messages.js';
 import { fluidGruntImage } from '../objects/images.js';
 
 function level2() {
@@ -29,7 +29,7 @@ function level2() {
     }
   }
 
-  return new Level(enemies, level2M.setDelay(3e3));
+  return new Level(enemies, levelM().setDelay(3e3));
 }
 
 export default level2;

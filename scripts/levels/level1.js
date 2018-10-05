@@ -1,6 +1,6 @@
 import Level from '../classes/level.js';
 import ClassicGrunt from '../classes/classic_grunt.js';
-import { level1M } from '../objects/messages.js';
+import { levelM } from '../objects/messages.js';
 import { classicGruntImage } from '../objects/images.js';
 
 function level1() {
@@ -31,7 +31,7 @@ function level1() {
   }
 
 
-  return new Level(enemies, level1M.setDelay(3e3));
+  return new Level(enemies, levelM().setDelay(3e3));
 }
 
 
