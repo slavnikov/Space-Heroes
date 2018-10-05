@@ -7,11 +7,12 @@ import { healthImage, laserImage } from '../objects/images.js';
 class Enemy extends Killable {
   constructor(props) {
     super(props);
+    this.rateOfFire = props.rateOfFire;
     this.ref = Math.random();
   }
 
-  fireMissle(chance) {
-    if (this.y + this.height >= 0 && Math.random() < chance) {
+  fireMissle() {
+    if (this.y + this.height >= 0 && Math.random() < this.rateOfFire) {
       const missle = new Missle({
         x: this.x + this.width /2,
         y: this.y + this.height,
@@ -36,7 +37,7 @@ class Enemy extends Killable {
   }
 
   translate() {
-    this.fireMissle(0.007);
+    this.fireMissle();
     super.translate();
     this.checkPlayerCollision();
   }

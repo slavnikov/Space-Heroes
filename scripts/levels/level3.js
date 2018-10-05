@@ -23,6 +23,7 @@ function level3() {
         vx: 1.5,
         vy: 0.6,
         hp: 3,
+        rateOfFire: 0.007,
         image: classicGruntImage,
       });
 
@@ -45,6 +46,7 @@ function level3() {
         vx: 3.5 * Math.pow(-1, y),
         vy: 1,
         hp: 2,
+        rateOfFire: 0.01,
         image: fluidGruntImage,
       });
 

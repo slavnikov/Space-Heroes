@@ -21,6 +21,7 @@ function level2() {
         vx: 4 * Math.pow(-1, y),
         vy: 1,
         hp: 2,
+        rateOfFire: 0.01,
         image: fluidGruntImage,
       });
 
