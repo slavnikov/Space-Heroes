@@ -53,16 +53,12 @@ class Game {
   }
 
   setupNextLevel () {
-    const nextLevel = this.levels[this.nextLevelIdx % this.levels.length];
+    const nextLevel = this.levels[this.nextLevelIdx];
 
     if (nextLevel) {
       nextLevel().setup();
       this.nextLevelIdx++;
       this.haveResetLevel = false;
-    } else {
-      this.messages = {};
-      this.messages[msgObjects.earthSafe.ref] = msgObjects.earthSafe;
-      this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
     }
   }
 
@@ -74,7 +70,7 @@ class Game {
     this.context.clearRect(0, 0, this.canvas[0].width, this.canvas[0].height);
     backgroundRender.render(this.context);
 
-    if (!this.haveResetLevel && !this.enemiesPresent()) {
+    if (!this.haveResetLevel && !this.enemiesPresent() && this.ship) {
       setTimeout(this.setupNextLevel.bind(this), 3e3);
       this.messages[msgObjects.cleared.ref] = msgObjects.cleared.setDelay(2e3);
       this.haveResetLevel = true;
@@ -135,7 +131,11 @@ class Game {
       this.eraseObject(this.ship);
       this.ship = null;
       this.messages = {};
-      this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
+      if (this.valorous) {
+        this.messages[msgObjects.earthSafe.ref] = msgObjects.earthSafe;
+      } else {
+        this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;
+      }
       this.messages[msgObjects.pressR.ref] = msgObjects.pressR;
       $("#high-score").removeClass("hidden");
     }

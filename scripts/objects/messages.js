@@ -73,10 +73,10 @@ export const cleared = new Message(
 );
 
 export const earthSafe = new Message(
-  "75px Righteous",
-  "blue",
+  "50px Righteous",
+  "#1ba8f0",
   "center",
-  "The Earth is safe! for now...",
+  "Thanks to your sacrifice, the Earth is safe!",
   1250 / 2,
   720 / 2
 );
