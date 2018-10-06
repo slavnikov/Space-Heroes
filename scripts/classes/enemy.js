@@ -61,19 +61,19 @@ class Enemy extends Killable {
     }
   }
 
-  dropHealth() {
+  dropHealth(value) {
     if (Math.random() < 0.4) {
       const missle = new Missle({
         x: this.x + this.width /2,
         y: this.y + this.height,
-        width: 25,
-        height: 25,
+        width: value * 2,
+        height: value * 2,
         xBounds: null,
         yBounds: {min: -50, max: 800},
         vx: 0,
         vy: 2,
         foe: "PlayerShip",
-        damage: -12,
+        damage: value * -1,
         image: healthImage,
         fireSound: healthDrop,
         impactSound: heal,
@@ -82,7 +82,7 @@ class Enemy extends Killable {
   }
 
   delete() {
-    this.dropHealth();
+    this.dropHealth(12);
     super.delete();
   }
 

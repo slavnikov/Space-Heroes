@@ -40,7 +40,7 @@ class Bouncer extends Enemy {
     const myVx = playerX - myX;
     const myVy = playerY - myY;
 
-    if (this.x > 0 && this.y > 0 && Math.random() < 0.02) {
+    if (this.x > 0 && this.y > 0 && Math.random() < 0.018) {
       const missle = new Missle({
         x: myX,
         y: myY,
@@ -59,7 +59,10 @@ class Bouncer extends Enemy {
     }
   }
 
-
+  getHit(damage) {
+    this.dropHealth(6);
+    super.getHit(damage);
+  }
 }
 
 export default Bouncer;
