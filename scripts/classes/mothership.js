@@ -64,73 +64,79 @@ class Mothership extends Enemy {
       clearInterval(this.spawnInterval);
       return;
     }
-    const selector = Math.floor(Math.random() * 4);
-      switch (selector) {
-        case 0:
-        game.drawObject(new ClassicGrunt({
+
+    let selector = Math.floor(Math.random() * 4);
+
+    if (this.y + this.height > 650 && selector > 2) {
+      selector = Math.floor(Math.random() * 2);
+    }
+
+    switch (selector) {
+      case 3:
+      game.drawObject(new ClassicGrunt({
+        x: this.x + this.width / 2,
+        y: this.y,
+        width: 80,
+        height: 87,
+        xBounds: {min: 0, max: 1250},
+        yBounds: {min: 0, max: this.y + this.height},
+        vx: (2 + Math.random()) * (Math.random > 0.5 ? 1 : -1) ,
+        vy: 0.6,
+        hp: 5,
+        rateOfFire: 0.0125,
+        image: classicGruntImage
+      }));
+      break;
+      case 2:
+        game.drawObject(new FluidGrunt({
           x: this.x + this.width / 2,
           y: this.y,
           width: 80,
           height: 87,
           xBounds: {min: 0, max: 1250},
           yBounds: {min: 0, max: this.y + this.height},
-          vx: (2 + Math.random()) * (Math.random > 0.5 ? 1 : -1) ,
-          vy: 0.6,
-          hp: 5,
-          rateOfFire: 0.0125,
-          image: classicGruntImage
+          vx: 4 * (Math.random > 0.5 ? 1 : -1),
+          vy: 1,
+          hp: 3,
+          rateOfFire: 0.03,
+          image: fluidGruntImage
         }));
         break;
-        case 1:
-          game.drawObject(new FluidGrunt({
-            x: this.x + this.width / 2,
-            y: this.y,
-            width: 80,
-            height: 87,
-            xBounds: {min: 0, max: 1250},
-            yBounds: {min: 0, max: this.y + this.height},
-            vx: 4 * (Math.random > 0.5 ? 1 : -1),
-            vy: 1,
-            hp: 3,
-            rateOfFire: 0.03,
-            image: fluidGruntImage
-          }));
-          break;
-        case 2:
-          const shifter = new Shifter({
-            x: this.x + this.width / 2,
-            y: this.y,
-            width: 50,
-            height: 50,
-            xBounds: {min: 0, max: 1250},
-            yBounds: {min: 0, max: 550},
-            vx: 0,
-            vy: 0,
-            hp: 3,
-            rateOfFire: 0,
-            image: shifterWhite
-          });
-          shifter.shifting = true;
-          game.drawObject(shifter);
-          break;
-        case 3:
-          game.drawObject(new Bouncer({
-            x: this.x + this.width / 2,
-            y: this.y,
-            width: 50,
-            height: 50,
-            xBounds: {min: -150, max: 1350},
-            yBounds: {min: -150, max: 700},
-            vx: (2.75 + Math.random()) * (Math.random() > 0.5 ? 1 : -1),
-            vy: 2.75 + Math.random(),
-            hp: 6,
-            rateOfFire: 0,
-            image: bouncerImage,
-          }));
-          break;
-        default:
-        return null;
-      }
+      case 1:
+        const shifter = new Shifter({
+          x: this.x + this.width / 2,
+          y: this.y,
+          width: 50,
+          height: 50,
+          xBounds: {min: 0, max: 1250},
+          yBounds: {min: 0, max: 550},
+          vx: 0,
+          vy: 0,
+          hp: 3,
+          rateOfFire: 0,
+          image: shifterWhite
+        });
+        shifter.shifting = true;
+        game.drawObject(shifter);
+        break;
+      case 0:
+        game.drawObject(new Bouncer({
+          x: this.x + this.width / 2,
+          y: this.y,
+          width: 50,
+          height: 50,
+          xBounds: {min: -150, max: 1350},
+          yBounds: {min: -150, max: 700},
+          vx: (2.75 + Math.random()) * (Math.random() > 0.5 ? 1 : -1),
+          vy: 2.75 + Math.random(),
+          hp: 6,
+          rateOfFire: 0,
+          image: bouncerImage,
+        }));
+        break;
+      default:
+      return null;
+    }
   }
 
   delete() {
