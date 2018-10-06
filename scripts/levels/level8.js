@@ -7,9 +7,9 @@ import { shifterWhite, bouncerImage } from '../objects/images.js';
 function level8() {
   const enemies = [];
 
-  for (var k = 0; k < 6; k++) {
+  for (var k = 0; k < 5; k++) {
     enemies.push(new Shifter({
-      x: (1250 / 6) * (k + 1),
+      x: (1250 / 5) * (k + 1),
       y: -100,
       width: 50,
       height: 50,

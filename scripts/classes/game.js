@@ -1,6 +1,6 @@
 import { backgroundRender } from '../main.js';
 import createPlayerShip from '../objects/ship.js';
-import level0 from '../levels/level0.js';
+import level10 from '../levels/level10.js';
 import level1 from '../levels/level1.js';
 import level2 from '../levels/level2.js';
 import level3 from '../levels/level3.js';
@@ -35,7 +35,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level0, level1, level2, level5, level3, level4, level6, level7, level8];
+    this.levels = [level1, level2, level5, level3, level4, level6, level7, level8, level10];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
     this.over = false;

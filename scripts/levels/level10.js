@@ -3,7 +3,7 @@ import Mothership from '../classes/mothership.js';
 import { levelM } from '../objects/messages.js';
 import { mothershipImage } from '../objects/images.js';
 
-function level0() {
+function level10() {
   const enemies = [];
 
   enemies.push(new Mothership({
@@ -22,4 +22,4 @@ function level0() {
   return new Level(enemies, levelM().setDelay(3e3));
 }
 
-export default level0;
+export default level10;
