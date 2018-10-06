@@ -35,7 +35,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level1, level2, level5, level3, level4, level6, level7, level8];
+    this.levels = [level0, level1, level2, level5, level3, level4, level6, level7, level8];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
     this.over = false;
@@ -130,6 +130,7 @@ class Game {
 
   gameOver() {
     if (!this.over) {
+      this.eraseObject(this.ship);
       this.ship = null;
       this.messages = {};
       this.messages[msgObjects.gameOver.ref] = msgObjects.gameOver;

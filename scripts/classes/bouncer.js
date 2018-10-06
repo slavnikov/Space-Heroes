@@ -40,7 +40,7 @@ class Bouncer extends Enemy {
     const myVx = playerX - myX;
     const myVy = playerY - myY;
 
-    if (this.x > 0 && this.y > 0 && Math.random() < 0.01) {
+    if (this.x > 0 && this.y > 0 && Math.random() < 0.02) {
       const missle = new Missle({
         x: myX,
         y: myY,

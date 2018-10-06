@@ -56,8 +56,8 @@ class Enemy extends Killable {
       ) &&
       hitBox[2] > plHitBox[3]
     ) {
-      this.getHit(1000);
-      game.ship.getHit(1000);
+      this.getHit(1000000);
+      game.ship.getHit(100);
     }
   }
 

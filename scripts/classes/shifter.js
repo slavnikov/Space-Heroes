@@ -44,7 +44,7 @@ class Shifter extends Enemy {
       return null;
     }
     const myX = this.x + this.width / 2;
-    const myY = this.y + this.height;
+    const myY = this.y + this.height / 2;
     const playerX = game.ship.x + game.ship.width / 2;
     const playerY = game.ship.y;
     const myVx = playerX - myX;

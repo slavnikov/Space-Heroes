@@ -27,3 +27,6 @@ shifterRed.src = "assets/theme_1/enemies/shifter-red.png";
 
 export const bouncerImage = new Image();
 bouncerImage.src = "assets/theme_1/enemies/bouncer.png";
+
+export const mothershipImage = new Image();
+mothershipImage.src = "assets/theme_1/enemies/mothership.png";
