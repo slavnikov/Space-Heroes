@@ -105,7 +105,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 210px;
+  width: 250px;
   height: 720px;
   overflow-y: hidden;
 }
@@ -121,10 +121,14 @@ img {
 .score-li {
   color: #1ba8f0;
   font-family: Righteous;
-  width: 210px;
+  width: 250px;
   font-size: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+.score-li i {
+  font-size: 15px;
 }
 
 .score-li p {

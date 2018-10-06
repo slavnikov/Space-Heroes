@@ -11,7 +11,8 @@ function highScoreSubmit(e) {
 
   if (name.val()) {
     firebase.database().ref(`${name.val()}/`).set({
-      score: game.score
+      score: game.score,
+      valorous: game.valorous,
     });
   }
   name.val("");
@@ -21,7 +22,6 @@ function highScoreSubmit(e) {
   drawHighScores();
 }
 
-// export const drawHighScores = () => {
 export function drawHighScores() {
   const list = $("#score-list");
   list.empty();
@@ -36,8 +36,12 @@ export function drawHighScores() {
 
     names.forEach((name) => {
       const score = listing[name].score;
-
-      list.append(`<li class="score-li"> <p>${name}:</p> <p>${score}</p> </li>`);
+      const valorous = listing[name].valorous;
+      if (valorous) {
+        list.append(`<li class="score-li"> <p><i class="material-icons">star</i>${name}:</p> <p>${score}</p> </li>`);
+      } else {
+        list.append(`<li class="score-li"> <p>${name}:</p> <p>${score}</p> </li>`);
+      }
     });
   });
 }

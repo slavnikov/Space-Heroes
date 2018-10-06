@@ -43,6 +43,7 @@ class Game {
     this.ship = null;
 
     this.score = 0;
+    this.valorous = false;
   }
 
   enemiesPresent () {
@@ -92,6 +93,7 @@ class Game {
 
   play() {
     this.ship = createPlayerShip();
+    this.valorous = false;
     this.objects.player = this.ship;
     this.messages = {};
     this.changeScore(this.score * -1);

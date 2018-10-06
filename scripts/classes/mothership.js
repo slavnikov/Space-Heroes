@@ -130,7 +130,10 @@ class Mothership extends Enemy {
       }
   }
 
-
+  delete() {
+    game.valorous = true;
+    super.delete();
+  }
 }
 
 export default Mothership;
