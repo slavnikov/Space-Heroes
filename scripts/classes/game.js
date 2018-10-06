@@ -35,7 +35,7 @@ class Game {
     this.currentInterval = null;
     this.paused = false;
 
-    this.levels = [level10, level2, level5, level3, level4, level6, level7, level8, level10];
+    this.levels = [level1, level2, level5, level3, level4, level6, level7, level8, level10];
     this.nextLevelIdx = 0;
     this.haveResetLevel = false;
     this.over = false;
