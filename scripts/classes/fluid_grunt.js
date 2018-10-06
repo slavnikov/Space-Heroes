@@ -8,11 +8,10 @@ class FluidGrunt extends Enemy {
 
   getVx() {
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
-      if (this.yBounds.max < 680) {
+      if (this.yBounds.max < 670) {
         this.yBounds.max = this.yBounds.max + 50;
       } else {
         this.yBounds.max = 720;
-        game.gameOver();
       }
       this.vx *= -1;
     }
@@ -21,6 +20,9 @@ class FluidGrunt extends Enemy {
   }
 
   translate() {
+    if (this.y + this.height >= 719) {
+      game.gameOver();
+    }
     this.getVx();
     super.translate();
   }

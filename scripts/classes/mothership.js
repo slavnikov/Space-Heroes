@@ -11,14 +11,14 @@ import { healthImage, laserImage, classicGruntImage, fluidGruntImage, shifterWhi
 class Mothership extends Enemy {
   constructor(props) {
     super(props);
-    // setInterval(this.spawnShip.bind(this), 5e3);
+    this.spawnInterval = setInterval(this.spawnShip.bind(this), 4e3);
   }
 
   getVx() {
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
-      if (this.yBounds.max < 670) {
+      if (this.yBounds.max < 600) {
         this.yBounds.max = this.yBounds.max + 100;
-      } else if(this.yBounds.max >= 670) {
+      } else {
         this.yBounds.max = 720;
       }
       this.vx *= -1;
@@ -60,8 +60,11 @@ class Mothership extends Enemy {
   }
 
   spawnShip() {
+    if (!game.objects[this.ref]) {
+      clearInterval(this.spawnInterval);
+      return;
+    }
     const selector = Math.floor(Math.random() * 4);
-
       switch (selector) {
         case 0:
         game.drawObject(new ClassicGrunt({
@@ -131,6 +134,7 @@ class Mothership extends Enemy {
   }
 
   delete() {
+    clearInterval(this.spawnInterval);
     game.valorous = true;
     super.delete();
   }

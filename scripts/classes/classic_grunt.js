@@ -11,9 +11,8 @@ class ClassicGrunt extends Enemy {
     if (this.x + this.width >= this.xBounds.max || this.x <= this.xBounds.min) {
       if (this.yBounds.max < 695) {
         this.yBounds.max = this.yBounds.max + 25;
-      } else if(this.yBounds.max >= 695) {
+      } else {
         this.yBounds.max = 720;
-        game.gameOver();
       }
       this.vx *= -1;
     }
@@ -22,6 +21,9 @@ class ClassicGrunt extends Enemy {
   }
 
   translate() {
+    if (this.y + this.height >= 719) {
+      game.gameOver();
+    }
     this.getVx();
     super.translate();
   }
